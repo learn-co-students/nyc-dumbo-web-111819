@@ -10,7 +10,7 @@
 - Should I code along?
 - Falling asleep
 
-## SWBATs
+## Students Will Be Able To s
 - Employ test-driven development best practices in their labs
   - `rspec --fail-fast` handle one error at a time
   - Red, Green, Refactor
@@ -38,6 +38,7 @@
   - Helper methods
   - Single Responsibility Principle
   - DRY
+- [ ] Practice writing `each`, `select`, `map`, and `find` with sample data
 
 ---
 

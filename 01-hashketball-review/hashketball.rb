@@ -127,29 +127,54 @@ def game_hash
   }
 end
 
+def all_players
+  game_hash[:home][:players] + game_hash[:away][:players]
+end
+
+def find_player_by_name(player_name)
+  all_players.find do |player_hash|
+    player_hash[:name] == player_name
+  end
+end
+
+def num_points_scored(player_name)
+  # identify home team and away team
+  # all_players_array = game_hash[:home][:players] + game_hash[:away][:players]
+  # iterate through the list of players
+  # use the player name
+  # find the player with the matching name
+  # found_player = find_player_by_name(player_name)
+
+  # return the points
+  find_player_by_name(player_name)[:points]
+end
+
+def shoe_size(player_name)
+  find_player_by_name(player_name)[:shoe]
+end
+
 
 # # EXERCISE:
+instructors = [
+  {name: 'Ian', hometown: 'upstate ny', energy_level: 8},
+  {name: 'Sylwia', hometown: 'Zielona Gora', energy_level: 10000},
+  {name: 'Mazen', hometown: 'Bahrain', energy_level: 1}
+]
+#
 # # Define a method called get_names that takes an array of instructors
 # # and returns just their names.
-# instructors = [
-#   {name: 'Alex', hometown: 'upstate ny', mood: 'excited'},
-#   {name: 'rachel', hometown: 'maine'},
-#   {name: 'maxwell', hometwon: 'brookyln'}
-# ]
-#
-# def get_names(instructors)
-#
-# end
+def get_names(instructors)
 
-# # EXERCISE
-# # What do the following return?
-#
-# arr = (1..100).to_a
-#
-# arr.map do |num|
-#   num.even?
-# end
-#
-# arr.select do |num|
-#   7
-# end
+end
+
+# # Define a method called excited_instructors that takes an array of instructors
+# # and returns all the instructors with an energy level higher than 5
+def excited_instructors(instructors)
+
+end
+
+# # Define a method called get_instructor_by_hometown that takes an array of instructors AND a string of a hometown
+# # and returns just the one instructor whose hometown matches
+def get_instructor_by_hometown(instructors, hometown)
+
+end
