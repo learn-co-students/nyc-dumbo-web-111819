@@ -44,11 +44,11 @@ bank_account = { account_number: 12345, balance: 100 }
 
 Write an implementation of a bank account that meets the following requirements:
 
-- can print the balance of the account
-- can deposit money into the account
-- can withdraw money from the account
-- keeps track of the account holder
-- can show me all the bank accounts that have been created
+- D -> keeps track of the balance of the account
+- D -> keeps track of the account holder
+- D -> can show me all the bank accounts that have been created
+- B -> can deposit money into the account
+- B -> can withdraw money from the account
 *bonus*
 - can find a bank account based on the account number
 
