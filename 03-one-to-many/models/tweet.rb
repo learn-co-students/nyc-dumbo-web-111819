@@ -1,3 +1,24 @@
 class Tweet
+  attr_reader :message, :user
+
+  @@all = []
+
+  def initialize(message, user)
+    @message = message
+    @user = user
+
+    @@all << self
+  end
+
+  def username
+    self.user.username
+  end
+
+  def self.all
+    @@all
+  end
 
 end # end of Tweet class
+
+# DRY - Don't Repeat Yourself
+# YAGNI - You Aren't Gonna Need It
