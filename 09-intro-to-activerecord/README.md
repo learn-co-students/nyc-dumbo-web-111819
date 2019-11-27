@@ -2,8 +2,7 @@ Intro to ActiveRecord
 ===
 
 ## SWBATs
-- [ ] Describe how gems work and the value of shared code
-- [ ] Implement ActiveRecord in their projects
+- [ ] Implement ActiveRecord in a project
 - [ ] Practice creating migrations for updating the database structure
 - [ ] Explain how `rake` works and how to run rake tasks
 - [ ] Distinguish between and define "model", "class", and "table"
@@ -12,6 +11,7 @@ Intro to ActiveRecord
 
 ### Outline
 * Demonstrate Mass Assignment
+  - programitcally assigning attributes when an object is initialized
 * Review project setup
 * Show how to use `rake` tasks
 * Choose a domain and set up ActiveRecord on our models (Game >-< Player)
@@ -36,34 +36,27 @@ end
 
 * What are the steps for setting up ActiveRecord on a model?
 
-0. Setup the connection to the database
-  - config/environment.rb
+0. Setup the environment/connection/any gems needed
 
-1. Create migration
-  - create a file (using `rake db:migrate`)
+1. Create a migration
+  - set of instructions in Ruby for working with a database
+  - `rake db:create_migration NAME=create_games`
 
-2. Write our migration
-  - write the code for the migration in that file
+2. Write migration code
   ```rb
     create_table :games do |t|
       t.string(:title)
-      t.string :genre
-      t.string :publisher
-      t.integer :rating
-
-      t.timestamps
-      # created_at, updated_at
+      t.string(:genre)
+      t.string(:publisher)
+      t.integer(:rating)
     end
   ```
-3. Run our migration
-`rake db:migrate`
 
-3.5. test/check your migration
-`rake db:migrate:status` (or look at your schema)
+3. Run migrations
+  - `rake db:migrate`
+3.5 - check your migrations (look at schema.rb or `rake db:migrate:status`)
 
-4. Connect tables to Ruby classes
-  - use table naming conventions
-
+4. Connect to a model
 
 * How can we do CRUD actions using ActiveRecord?
 
