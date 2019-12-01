@@ -1,7 +1,7 @@
 User.destroy_all
 Joke.destroy_all
 
-u1 = User.create(username: "Mazen")
+u1 = User.create(username: "mazen")
 
 j1 = Joke.create(content: "This is a test joke")
 
