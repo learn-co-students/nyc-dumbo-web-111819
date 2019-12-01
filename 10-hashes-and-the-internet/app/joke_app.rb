@@ -89,40 +89,6 @@ def next_steps
 end
 
 
-    # welcome
-    # login_or_signup
-    #
-    # joke_title = get_search_input
-    #
-    # joke_hash = search_google_jokes(joke_title)
-    #
-    # # display each title to the user
-    # jokes_array = joke_hash["items"]
-    # titles = jokes_array.map do |joke_hash|
-    #   joke_hash["volumeInfo"]["title"]
-    # end
-    # titles.each do |title|
-    #   puts title
-    # end
-    #
-    # # maybe this -> and save jokes to my library
-
-
-  def get_search_input
-    puts "Please enter a joke to search:"
-    joke_search = gets.chomp
-    # fix the string formatting
-    joke_search.gsub!(" ", "+")
-  end
-
-  def search_google_jokes(joke_title)
-    # use that input to make a request to Google API
-    response = RestClient.get "https://www.googleapis.com/jokes/v1/volumes?q=#{joke_title}"
-    # parse the response into a Hash
-    JSON.parse(response.body)
-  end
-end
-
 ###################################
 # final answer: response.body.split(/(?<!\r)\n/).sample
 
