@@ -22,6 +22,10 @@
 - Save search results to database
 - Display saved books
 
+### Domain model
+![](jokeApp.png)
+User -< UserJoke >- Joke
+
 ### Process
 1. Create Gemfile + run `bundle`
 2. Create migrations: run `rake db:create`

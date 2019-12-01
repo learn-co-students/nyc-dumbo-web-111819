@@ -1,5 +1,5 @@
 User.destroy_all
-Book.destroy_all
+Joke.destroy_all
 
 u1 = User.create(username: "Mazen")
 
