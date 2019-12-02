@@ -23,73 +23,123 @@ class JokeApp
     username = gets.chomp.downcase
     # Log In: Find a user in the database with their username
     @user = User.find_or_create_by(username: username)
+    # Clear the system so it's not ugly with SQL
     system 'clear'
+    # Why not some message
     puts "Alrighty, #{@user.username.capitalize}!"
+    # Freeze for a bit
     sleep(0.3)
   end
 
   def what_subject
+    # Prompt user but split the prompts so it's more readible
     puts "What do you want to hear a joke about?"
     sleep(0.1)
     puts "Write 'random' to see a random joke"
-    return joke_subject = gets.chomp.downcase
-
+    # save the response
+    joke_subject = gets.chomp.downcase
   end
 
   def get_joke(subject)
+    # save url to a variable
     url = "https://icanhazdadjoke.com/"
+    # if user's response was random, just use the url, if not, concatenate
     if subject == "random"
       search_jokes(url)
     else
       search_jokes(url+"search?term=#{subject}")
     end
-    another_one?
   end
 
   def search_jokes(url)
     # here is a curl-to-ruby convertor I found: https://jhawthorn.github.io/curl-to-ruby/
+    ##### YOU DON'T NEED TO KNOW WHAT EACH LINE DOES BUT JUST IN CASE I'M ADDING EXPLANATIONS #####
+    # parse the URL
     uri = URI.parse(url)
+    # save the request to a variable
     request = Net::HTTP::Get.new(uri)
+    # set an accept header to text/plain
     request["Accept"] = "text/plain"
-
+    # set options to a hash with the ssl key
     req_options = {
       use_ssl: uri.scheme == "https",
     }
-
+    # now, parse the response to our request
     response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
       http.request(request)
     end
+
+    # at this point, I wanted to see what I was getting, so naturally:
     # binding.pry
-    # see below how many trials it took me to get the line below
     resp = response.body.split(/(?<!\r)\n/).sample
+    # see at the bottom how many trials it took me to get the regex right
+
+    # now, if the user wrote some gibberish or there's no record, put a message and if there is, save the joke to the Joke database;
     if resp == nil || resp.length == 0 #see what happens if you put nil on the right!
       puts "Sorry! No jokes about it"
     else
+      joke = Joke.find_or_create_by(content: resp)
+      system 'clear'
       puts resp
     end
     sleep(0.5)
+    # then ask the User if they want to save they joke to their favs
+    save_it?(joke)
+  end
+
+  def save_it?(joke)
+    puts "Do you want to save this joke to your favs?"
+    answer = gets.chomp
+    # delegate to helper methods
+    if answer == "yes"
+      fav_joke(joke)
+    elsif answer == "no"
+      another_one?
+    else
+      puts "Say 'yes' or 'no'"
+      # recursion -- the method is calling on itself
+      save_it?
+    end
+  end
+
+  def fav_joke(joke)
+    # save the joke and display a message
+    UserJoke.find_or_create_by(joke_id: joke.id)
+    system 'clear'
+    puts "saved!\n"
+    sleep(0.5)
+    # give an option to see next joke
+    another_one?
   end
 
   def another_one?
+    # set up an array with prompts so it doesn't get repetitive
     prompts = ["Wanna hear another one?", "Wanna one more?", "Wanna more laughs?"]
+    # sample a prompt
     puts prompts.sample
+    # helper method to determine what's next
     next_steps
   end
 
   def next_steps
+    # save user's response
     answer = gets.chomp
+    # if yes,
     if answer == "yes"
       get_joke(what_subject)
     elsif answer == "no"
+      # say bye bye
       puts "goodbye!"
       sleep(0.5)
       BananaMan.go
       system 'exit'
     else
       puts "Say 'yes' or 'no'"
+      # recursion -- the method is calling on itself
       next_steps
     end
   end
+
 end
 
 ###################################
