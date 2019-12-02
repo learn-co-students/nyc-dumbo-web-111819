@@ -1,4 +1,4 @@
 require_relative '../config/environment'
 
-app = BookApp.new
+app = JokeApp.new
 app.run

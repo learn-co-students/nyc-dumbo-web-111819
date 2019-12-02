@@ -1,3 +1,5 @@
 class User < ActiveRecord::Base
-  # add associatons!
+  has_many :user_jokes
+  has_many :jokes, through: :user_jokes
+
 end

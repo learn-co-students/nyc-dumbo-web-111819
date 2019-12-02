@@ -29,10 +29,10 @@ User -< UserJoke >- Joke
 ### Process
 1. Create Gemfile + run `bundle`
 2. Create migrations: run `rake db:create`
-3. Migrate: run `rake db: migrate`
+3. Migrate: run `rake db:migrate`
 * **REMEMBER** never ever ever change anything in schema.
 4. Set up associations in classes (belongs_to / has_many / has_many through:)
-5. Create seed data + run `rake db: seed`
+5. Create seed data + run `rake db:seed`
 * remember: seeding does not give you any output so no news on your console == good news
 6. Check if you've seeded correctly: run `rake c` and check what's the last instance of any of your class
 
