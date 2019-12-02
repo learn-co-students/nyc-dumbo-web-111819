@@ -24,7 +24,6 @@ class JokeApp
     username = gets.chomp.downcase
     # Log In: Find a user in the database with their username
     @user = User.find_or_create_by(username: username)
-    # Clear the system so it's not ugly with SQL
     system 'clear'
     # Why not some message
     puts "Alrighty, #{@user.username.capitalize}!"
