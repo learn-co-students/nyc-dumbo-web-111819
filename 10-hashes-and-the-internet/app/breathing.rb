@@ -1,8 +1,5 @@
 class Wellness
 
-  # https://www.wikihow.com/Meditate-on-Breath
-
-############################# BREATHING METHODS ############################################################
   def self.invite_for_breathing
     puts "\n 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 🔹 \n"
     puts "Stress is real."

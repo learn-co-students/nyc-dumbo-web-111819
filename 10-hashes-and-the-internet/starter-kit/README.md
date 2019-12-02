@@ -38,8 +38,11 @@ User -< UserJoke >- Joke
 
 ### Dad Jokes API
 
-[Dad Jokes API Docs](https://icanhazdadjoke.com/api)
-[Sample API Request](https://icanhazdadjoke.com/api#fetch-a-random-dad-joke)
+- [Dad Jokes API Docs](https://icanhazdadjoke.com/api)
+- [Sample API Request](https://icanhazdadjoke.com/api#fetch-a-random-dad-joke)
+
+- **[More APIs]**(https://rapidapi.com/collection/cool-apis)
+- [And even more APIs](https://medium.com/@vicbergquist/18-fun-apis-for-your-next-project-8008841c7be9)
 
 ### Fun Gems For Your Projects
 - `faker` - randomly generated seed data fun
@@ -52,7 +55,7 @@ User -< UserJoke >- Joke
 
 ### Tutorials
 - [Using TTY Prompt by Brandon James](https://medium.com/@brandonj2858/benefits-of-using-tty-prompt-for-my-first-project-e5cfbc598a62)
-- [Adding animations to your CLI by Sylwia Vargas]()
-- [Adding ASCII Art to your CLI by Sylwia Vargas]()
+- [Adding animations to your CLI by Sylwia Vargas](https://medium.com/better-programming/add-an-animation-or-a-giph-to-your-ruby-cli-29952e8c46ea)
+- [Adding ASCII Art to your CLI by Sylwia Vargas](https://medium.com/@sylwiavargas/adding-pictures-to-your-ruby-cli-4252b89823a)
 - [Using Time/Date in your CLI by Joel Mendoza](https://medium.com/@joelmendza173/ruby-date-time-for-dummies-9f45518bab64)
 - [Resetting your database indexes by Sylwia Vargas]()
