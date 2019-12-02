@@ -6,6 +6,7 @@ class JokeApp
   def run
     welcome
     login_or_signup
+    wanna_see_favs?
     get_joke(what_subject)
   end
 
@@ -31,11 +32,49 @@ class JokeApp
     sleep(0.3)
   end
 
-  def what_subject
+  def wanna_see_favs?
+    puts "Wanna see your fav jokes?"
+    answer = gets.chomp
+    if answer.downcase == "yes"
+      system 'clear'
+      # again, a helper method
+      show_jokes
+      # binding.pry
+      puts "\n"
+    else
+      puts "Alrighty!"
+    end
     # Prompt user but split the prompts so it's more readible
     puts "What do you want to hear a joke about?"
     sleep(0.1)
     puts "Write 'random' to see a random joke"
+  end
+
+  def show_jokes
+    if @user.jokes.length == 0
+      no_jokes
+    else
+      user_favs
+    end
+  end
+
+  def user_favs
+    # let's create a method that will show all the jokes on different colors so it's not boring! Oho, Ruby has a method that turns strings into symbols, as I just learned
+    # binding.pry
+    @user.jokes.map do |j|
+      font_color = ["red", "blue", "black"].sample.to_sym
+      background_color = ["light_cyan", "light_white", "light_green", "light_magenta", "light_yellow", "cyan"].sample.to_sym
+      puts j.content.colorize(:color => font_color, :background => background_color) + "\n"
+    end
+  end
+
+  def no_jokes
+    # just a simple message
+    puts "You have no fav jokes yet!\n".colorize(:color => :black, :background => :yellow)
+    puts "Let's change that!\n".colorize(:color => :black, :background => :yellow)
+  end
+
+  def what_subject
     # save the response
     joke_subject = gets.chomp.downcase
   end
@@ -71,8 +110,8 @@ class JokeApp
 
     # at this point, I wanted to see what I was getting, so naturally:
     # binding.pry
-    resp = response.body.split(/(?<!\r)\n/).sample
-    # see at the bottom how many trials it took me to get the regex right
+    resp = response.body.split(/(?<!\r)\n/).sample.to_s.force_encoding("UTF-8")
+    # see at the bottom how many trials it took me to get the regex right and then the encoding
 
     # now, if the user wrote some gibberish or there's no record, put a message and if there is, save the joke to the Joke database;
     if resp == nil || resp.length == 0 #see what happens if you put nil on the right!
@@ -80,7 +119,8 @@ class JokeApp
     else
       joke = Joke.find_or_create_by(content: resp)
       system 'clear'
-      puts resp
+      # let's add some color and embold it <- it comes with colorize!
+      puts resp.colorize(:color => :red, :background => :cyan).bold
     end
     sleep(0.5)
     # then ask the User if they want to save they joke to their favs
@@ -104,7 +144,7 @@ class JokeApp
 
   def fav_joke(joke)
     # save the joke and display a message
-    UserJoke.find_or_create_by(joke_id: joke.id)
+    UserJoke.find_or_create_by(joke_id: joke.id, user_id: @user.id)
     system 'clear'
     puts "saved!\n"
     sleep(0.5)
@@ -165,3 +205,7 @@ end
 # response.body.split("\n")
 # response.body.gsub!("\r", "").split("\n")
 # response.body.split("\n").gsub!("\r", " ")
+
+#### And when I thought all is well, I got this error: "incompatible character encodings: ASCII-8BIT and UTF-8", which was due to the fact that the API was not written for Ruby and did not include the Ruby encoding.
+#### I added then: to_s.force_encoding("UTF-8")
+#### first, I wanted to make sure it still is a string and then force encoding (googled "How to encode Ruby UTF-8")
