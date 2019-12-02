@@ -52,7 +52,7 @@ User -< UserJoke >- Joke
 
 ### Tutorials
 - [Using TTY Prompt by Brandon James](https://medium.com/@brandonj2858/benefits-of-using-tty-prompt-for-my-first-project-e5cfbc598a62)
-- [Adding animations to your CLI by Sylwia Vargas]()
+- [Adding animations to your CLI by Sylwia Vargas](https://medium.com/better-programming/add-an-animation-or-a-giph-to-your-ruby-cli-29952e8c46ea)
 - [Adding ASCII Art to your CLI by Sylwia Vargas]()
 - [Using Time/Date in your CLI by Joel Mendoza](https://medium.com/@joelmendza173/ruby-date-time-for-dummies-9f45518bab64)
 - [Resetting your database indexes by Sylwia Vargas]()
