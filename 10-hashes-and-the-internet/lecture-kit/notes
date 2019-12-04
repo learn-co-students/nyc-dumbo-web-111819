@@ -1,0 +1,8 @@
+Re-write the takeANumber function (JavaScript) 
+so that instead of working with customer names our deli issues ticket numbers. At the beginning of the day, when the line is empty and a customer walks in and they take a number by calling takeANumber, the program should:
+
+add the customer to the line
+say “Welcome. You are ticket number 1”
+The next customer that walks in should be number “2”, and so on.
+
+When the first customer’s order is ready, the program should: * remove the customer from the line * say “Currently serving 1”

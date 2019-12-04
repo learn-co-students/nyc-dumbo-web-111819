@@ -28,7 +28,7 @@ User -< UserJoke >- Joke
 
 ### Process
 1. Create Gemfile + run `bundle`
-2. Create migrations: run `rake db:create`
+2. Create migrations: run `rake db:create_migration`
 3. Migrate: run `rake db: migrate`
 * **REMEMBER** never ever ever change anything in schema.
 4. Set up associations in classes (belongs_to / has_many / has_many through:)
