@@ -34,14 +34,31 @@ Intro to Sinatra & MVC
 ### New!
 
 - *MVC*: 
-  - Model =>
-  - View =>
-  - Controller =>
+  - Model => classes, data/behavior for objects, and also the database
+  - View => what the user sees, frontend, HTML, and how the user interacts with the app
+  - Controller => logic for requests, go between between the model and the view 
   
   - Why MVC?
+    - maintainable: more organized, easier to debug, easier for developers to navigate
+    - separation of concerns: each piece of the app has only one job
 
 - *convention over configuration*
+  - 
+
 - *RESTful Routing (REST)*
+  REST -> REpresentational State Transfer
+    - how an application is, a snapshot of piece of the application
+    - REpresentational -> how the user sees our application state
+    - Transfer -> just how they get it from us
+
+One -< Many
+-----------
+Store -< Location
+2 Walker -< Dog
+3 Planet -< Alien
+2 Restaurant -< Dish
+9 Universe -< Planet: FindMyPlanet
+3 Person -< Shoe
 
 ## Deliverables
 
