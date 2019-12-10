@@ -9,6 +9,9 @@ Sinatra CRUD Part 1
 - Get information from the `params` hash in a controller method
 - Understand the difference between rendering and redirecting, and when to use one strategy or the other
 
+## Review
+- different parts of MVC
+
 ## Outline
 - Part 1.1: review our code from yesterday, update our index view and create a show view
   - Links
@@ -16,21 +19,19 @@ Sinatra CRUD Part 1
 - Part 1.2: work on the Create part of CRUD
   - Forms
   - Creating w/Mass Assigmnent
-- *If there's time*
-  - Search form!
 
 ## REST & CRUD
 - [ ] Create
-  - [ ] GET '/movies/new' -> Show the user a form to create a new movie
-  - [ ] POST '/movies' -> Create a new movie in our database
-- [ ] Read
-  - [ ] GET '/movies' -> Show all movies
-  - [ ] GET '/movies/:id' -> Show one movie
+  - [ ] GET '/universes/new' -> Show the user a form to create a new universe
+  - [ ] POST '/universes' -> Create a new universe in our database
+- [x] Read
+  - [x] GET '/universes' -> Show all universes
+  - [x] GET '/universes/:id' -> Show one universe
 - [ ] Update
-  - [ ] GET '/movies/:id/edit' -> Show the user a form to edit an existing movie movie
-  - [ ] PATCH '/movies/:id' -> Update the movie in our database
+  - [ ] GET '/universes/:id/edit' -> Show the user a form to edit an existing universe universe
+  - [ ] PATCH '/universes/:id' -> Update the universe in our database
 - [ ] Delete
-  - [ ] DELETE '/movies/:id' -> Delete the movie from our database
+  - [ ] DELETE '/universes/:id' -> Delete the universe from our database
 
 ### Static vs Dynamic Routes
 
