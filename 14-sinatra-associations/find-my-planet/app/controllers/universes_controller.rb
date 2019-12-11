@@ -23,6 +23,13 @@ class UniversesController < ApplicationController
     erb :"universes/deleted"
   end
 
+  get '/universes/search' do
+    @universes = Universe.where("name like ?", "%#{params[:search_term]}%")
+    
+    # response
+    erb :"universes/search"
+  end
+
   # show
   get '/universes/:id' do
     # model
