@@ -14,10 +14,10 @@
 - Review ActiveRecord/project setup
 - Discuss user stories for our app
   - [ ] As a user, I should be able to sign up/login to the application
-  - [ ] As a user, I can search the Google API and save books to my library
-  - [ ] As a user, I can view a list of my saved books
+  - [ ] As a user, I can search the Google API and save jokes to my little jokes treasure
+  - [ ] As a user, I can view a list of my saved jokes
 - Build welcome message and user login
-- Implement search using Google API
+- Implement search using Dad Jokes API
 *If there's time*
 - Save search results to database
 - Display saved books
