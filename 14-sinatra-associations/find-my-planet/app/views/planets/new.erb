@@ -1,0 +1,28 @@
+<h1>Make a Planet</h1>
+
+<form method="POST" action="/planets">
+  <label for="planet[name]">Name</label>
+  <input type="text" name="planet[name]">
+  <br>
+  <label for="planet[age]">Age</label>
+  <input type="number" name="planet[age]">
+  <br>
+  <label for="planet[weather]">weather</label>
+  <input type="text" name="planet[weather]">
+  <br>
+  <label for="planet[has_life]">Has Life?</label>
+  <input type="text" name="planet[has_life]">
+  <br>
+  <label for="planet[universe_id]">What Universe pls?</label>
+  
+  <%= select_tag("planet[universe_id]", @universes, :id, :name) %>
+
+  <select name="planet[universe_id]">
+    <% @universes.each do |universe| %>
+      <option value="<%= universe.id %>"><%= universe.name %> | <%= universe.id %> </option>
+    <% end %>
+  </select>
+
+  <br>
+  <input type="submit" value="Create planet">
+</form>

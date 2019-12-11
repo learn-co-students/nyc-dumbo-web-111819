@@ -1,4 +1,9 @@
 <h1>This is the Show page for <%= @universe.name %></h1>
+
+<%= header("some text") %>
+
+<%= link_to(@universe.name, "/universes/#{@universe.id}/edit") %>
+
 <a href="/universes/<%= @universe.id %>/edit">
   Edit <%= @universe.name %>
 </a>
@@ -17,5 +22,13 @@
   <input type="hidden" value="DELETE" name="_method">
   <input type="submit" value="Nuke it 💣">
 </form>
+
+<h1>Here are my planets</h1>
+<% @universe.planets.each do |planet| %>
+  <p>
+    <a href="/planets/<%= planet.id %>"><%= planet.name %></a>
+  </p>
+<% end %>
+
 
 <footer><%= @universe_emoji %></footer>

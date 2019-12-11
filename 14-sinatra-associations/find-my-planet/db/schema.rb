@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191209194205) do
+ActiveRecord::Schema.define(version: 20191211183751) do
+
+  create_table "planets", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "has_life"
+    t.integer  "age"
+    t.string   "weather"
+    t.integer  "universe_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "universes", force: :cascade do |t|
     t.integer "size"
