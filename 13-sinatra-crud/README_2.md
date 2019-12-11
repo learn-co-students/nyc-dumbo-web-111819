@@ -9,6 +9,10 @@ Sinatra CRUD Part 2
 - Use nested params to isolate params coming from form fields
 - Render a delete button
 
+## Sinatra Pain Points
+- params
+- RESTful routing (routing in general)
+
 ## Outline
 - Review our app
 - Part 1: Update
@@ -22,17 +26,17 @@ Sinatra CRUD Part 2
   - Search form!
 
 ### REST & CRUD
-- [ ] Create
-  - [ ] GET '/movies/new' -> Show the user a form to create a new movie
-  - [ ] POST '/movies' -> Create a new movie in our database
-- [ ] Read
-  - [ ] GET '/movies' -> Show all movies
-  - [ ] GET '/movies/:id' -> Show one movie
+- [x] Create
+  - [x] GET '/universes/new' -> Show the user a form to create a new universe
+  - [x] POST '/universes' -> Create a new universe in our database
+- [x] Read
+  - [x] GET '/universes' -> Show all universes
+  - [x] GET '/universes/:id' -> Show one universe
 - [ ] Update
-  - [ ] GET '/movies/:id/edit' -> Show the user a form to edit an existing movie movie
-  - [] PUT '/movies/:id' -> Update the movie in our database
+  - [ ] GET '/universes/:id/edit' -> Show the user a form to edit an existing universe universe
+  - [ ] PUT '/universes/:id' -> Update the universe in our database
 - [ ] Delete
-  - [ ] DELETE '/movies/:id' -> Delete the movie from our database
+  - [ ] DELETE '/universes/:id' -> Delete the universe from our database
 
 
 ### HTML Forms and HTTP verbs
