@@ -8,13 +8,13 @@ class ApplicationController < Sinatra::Base
     set :method_override, true
   end
 
+  # root
   get "/" do
     # response
     erb(:cheese)
   end
 
-  # Task 1: show a list of all the universes
-  # requests
+  # index
   get '/universes' do
     # model
     @universes = Universe.all
@@ -24,6 +24,7 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  # new
   get '/universes/new' do
     # model
 
@@ -31,13 +32,13 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
+  # custom route!
   get '/universes/deleted' do
     erb :deleted
   end
   
-  # Task 2: show details for ONE specific universe
+  # show
   get '/universes/:id' do
-    # binding.pry
     # model
     @universe = Universe.find_by(id: params[:id])
     @universe_emoji = "🤠"
@@ -46,48 +47,42 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
+  # create
   post '/universes' do
     # model 
-    # universe = Universe.create(name: params[:name_field], size: params[:size_field], color: params[:color_field])
     universe = Universe.create(params[:universe])
     
-    # response?
-    # erb :show
+    # response
     redirect "/universes/#{universe.id}"
   end
 
+  # edit
   get '/universes/:id/edit' do
+    # model
     @universe = Universe.find_by(id: params[:id])
 
+    # response
     erb :edit
   end
 
+  # update
   put '/universes/:id' do
-    # get the instance
+    # model
     universe = Universe.find_by(id: params[:id])
-    # update the record in the database
     universe.update(params[:universe])
 
     # response
     redirect "/universes/#{universe.id}"
   end
 
+  # destroy
   delete '/universes/:id' do
-    # find the universe
+    # model
     universe = Universe.find_by(id: params[:id])
-    # delete it
     universe.destroy
 
     # response
     redirect "/universes/deleted"
   end
-
-  # get '/universes/2' do
-  #   # model
-  #   @universe = Universe.find_by(id: 2)
-
-  #   # response
-  #   erb :show
-  # end
 
 end
