@@ -1,0 +1,11 @@
+<h1>Here are all the Universes!</h1>
+<a href="https://www.google.com">what the user can click on </a>
+
+<% @universes.each do |universe| %>
+  <h2>
+    This is my planet
+    <a href="/universes/<%= universe.id %>">
+      <%= universe.name %>
+    </a>
+  </h2>
+<% end %>

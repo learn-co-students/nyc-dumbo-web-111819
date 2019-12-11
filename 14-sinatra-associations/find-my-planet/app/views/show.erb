@@ -1,0 +1,21 @@
+<h1>This is the Show page for <%= @universe.name %></h1>
+<a href="/universes/<%= @universe.id %>/edit">
+  Edit <%= @universe.name %>
+</a>
+
+<p>
+  Size: <%= @universe.size %>
+</p>
+<p>
+  Fair? <%= @universe.fair %>
+</p>
+<p style="background-color: <%= @universe.color %>">
+  Color: <%= @universe.color %>
+</p>
+
+<form method="POST" action="/universes/<%= @universe.id %>">
+  <input type="hidden" value="DELETE" name="_method">
+  <input type="submit" value="Nuke it 💣">
+</form>
+
+<footer><%= @universe_emoji %></footer>
