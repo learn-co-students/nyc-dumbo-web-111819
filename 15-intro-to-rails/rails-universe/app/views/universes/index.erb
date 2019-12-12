@@ -1,0 +1,9 @@
+<h1>Here are all the Universes!</h1>
+
+<% @universes.each do |universe| %>
+  <p>
+    <%= link_to universe.name, "/universes/#{universe.id}" %>
+    <%= link_to universe.name, universe_path(universe.id) %>
+    <%= link_to universe.name, universe %>
+  </p>
+<% end %>

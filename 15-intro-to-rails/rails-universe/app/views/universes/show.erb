@@ -1,0 +1,11 @@
+<h1>This is the Show page for <%= @universe.name %></h1>
+
+<%# link_to(@universe.name, "/universes/#{@universe.id}/edit") %>
+
+<a href="/universes/<%= @universe.id %>/edit">
+  Edit <%= @universe.name %>
+</a>
+
+<p>
+  Size: <%= @universe.planet_count %>
+</p>
