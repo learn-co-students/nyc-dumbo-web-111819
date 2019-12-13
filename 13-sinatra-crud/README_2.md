@@ -32,9 +32,9 @@ Sinatra CRUD Part 2
 - [x] Read
   - [x] GET '/universes' -> Show all universes
   - [x] GET '/universes/:id' -> Show one universe
-- [ ] Update
-  - [ ] GET '/universes/:id/edit' -> Show the user a form to edit an existing universe universe
-  - [ ] PUT '/universes/:id' -> Update the universe in our database
+- [x] Update
+  - [x] GET '/universes/:id/edit' -> Show the user a form to edit an existing universe universe
+  - [x] PUT '/universes/:id' -> Update the universe in our database
 - [ ] Delete
   - [ ] DELETE '/universes/:id' -> Delete the universe from our database
 

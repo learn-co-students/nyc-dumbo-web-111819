@@ -9,7 +9,14 @@ Sinatra Relationships
 
 ### Outline
 - [ ] Add a second model to our domain
+
+Universe -< Planet
+
 - [ ] Come up with user stories for our application and see how they can be solved with REST
+
+As a user, I can view all the planets for one universe on the show page
+As a user, I can create new planets
+
 - [ ] List the instances related model on the show page for the class that `has_many` of the other class
 - [ ] Create the `new` and `create` routes for the other model (with `belongs_to`)
 

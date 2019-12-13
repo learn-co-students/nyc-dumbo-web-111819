@@ -7,11 +7,19 @@ Rails Forms
 - Use ActionView helpers like `link_to`, `button_to` and `form_for` to help write HTML
 - Use strong params to allow creating/updating models with mass assignment
 
+App Idea
+---
+Garden
+- width
+- length
+- location
+- staff_count
+
 ## Outline
-- [ ] Create our model using `rails g model`
-- [ ] Work on CRUD, focus on routes and ActionView helpers
-  - [ ] Read
-    - [ ] Review `link_to` and path helpers
+- [x] Create our model using `rails g model`
+- [x] Work on CRUD, focus on routes and ActionView helpers
+  - [x] Read
+    - [x] Review `link_to` and path helpers
   - [ ] Create
     - [ ] HTML form vs `form_tag` vs `form_for`
     - [ ] Strong Params
