@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_162337) do
+ActiveRecord::Schema.define(version: 2019_12_16_211356) do
 
   create_table "gardens", force: :cascade do |t|
     t.integer "length"
@@ -22,4 +22,15 @@ ActiveRecord::Schema.define(version: 2019_12_13_162337) do
     t.string "name"
   end
 
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.string "smell"
+    t.integer "leaf_count"
+    t.integer "garden_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["garden_id"], name: "index_plants_on_garden_id"
+  end
+
+  add_foreign_key "plants", "gardens"
 end

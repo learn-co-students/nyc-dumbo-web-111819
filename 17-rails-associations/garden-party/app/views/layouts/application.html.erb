@@ -11,8 +11,8 @@
 
   <body>
     <nav>
-      <a href="/gardens">Gardens</a>
-      <a href="/gardens/new">New Gardens</a>
+      <%= link_to 'Gardens', gardens_path %>
+      <%= link_to 'New Gardens', new_garden_path %>
     </nav>
     <%= yield %>
   </body>

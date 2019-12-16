@@ -5,5 +5,6 @@
     <%= link_to garden.name, garden %>
   </h3>
   <em><%= garden.location %></em>
+  <%= button_to "delete", garden_path(garden), :method => :delete %>
   <hr>
 <% end %>

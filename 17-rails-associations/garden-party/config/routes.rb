@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :plants, only: [:new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   # get "/gardens", to: "gardens#index", as: "gardens"
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   # post "/gardens", to: "gardens#create"
   # get "/gardens/:id/edit", to: "gardens#edit", as: "edit_garden"
   # patch "/gardens/:id", to: "gardens#update"
-
-  resources :gardens, only: [:index, :show, :new, :create, :edit, :update]
+  
+  resources :gardens #, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
 end
