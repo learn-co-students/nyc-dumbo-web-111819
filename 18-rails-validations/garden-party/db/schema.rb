@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_211356) do
+ActiveRecord::Schema.define(version: 2019_12_17_161341) do
 
   create_table "gardens", force: :cascade do |t|
     t.integer "length"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_211356) do
     t.integer "garden_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "color"
     t.index ["garden_id"], name: "index_plants_on_garden_id"
   end
 

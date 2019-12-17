@@ -20,8 +20,10 @@ class GardensController < ApplicationController
 
   # get "/gardens/new"
   def new
+    
     # model
     @garden = Garden.new
+    @errors = flash[:errors]
 
     # response
     render :new
@@ -30,11 +32,20 @@ class GardensController < ApplicationController
   # post '/gardens'
   def create
     # model
-    garden_params = params.require(:garden).permit(:name, :location, :staff_count)
-    Garden.create(garden_params)
+    garden_params = params.require(:garden).permit(:name, :location, :staff_count, :length, :width)
 
-    # response
-    redirect_to gardens_path
+    @garden = Garden.create(garden_params)
+
+    # if the garden is valid, redirect to the garden path
+    if @garden.valid?
+      # response
+      flash[:success] = "Good job filling out the form!"
+      redirect_to gardens_path
+    else
+      # otherwise, send an error message and redirect to the new page so they fill out the form again
+      flash[:errors] = @garden.errors.full_messages
+      redirect_to new_garden_path
+    end
   end
 
   # get '/gardens/:id/edit'
@@ -50,7 +61,7 @@ class GardensController < ApplicationController
   def update
     # model
     @garden = Garden.find_by(id: params[:id])
-    garden_params = params.require(:garden).permit(:name, :location, :staff_count)
+    garden_params = params.require(:garden).permit(:name, :location, :staff_count, :length, :width)
     @garden.update(garden_params)
     
     # response
