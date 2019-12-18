@@ -6,7 +6,7 @@ class EmployeesController < ApplicationController
     end
   
     def new
-      @employee = Employee.new(employee_params)
+      @employee = Employee.new
       @errors = flash[:errors]
     end
   
