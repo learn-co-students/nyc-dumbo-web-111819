@@ -1271,3 +1271,88 @@ Processing by EmployeesController#index as HTML
 Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/employees/14" for 127.0.0.1 at 2019-12-18 17:08:39 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  Rendered employees/_header.html.erb (1.2ms)
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered employees/_footer.html.erb (0.2ms)
+  Rendered employees/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 200ms (Views: 182.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/employees/14" for 127.0.0.1 at 2019-12-18 17:09:02 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  Rendered employees/_header.html.erb (0.6ms)
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered employees/_footer.html.erb (0.4ms)
+  Rendered employees/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/employees/14" for 127.0.0.1 at 2019-12-18 17:09:58 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  Rendered employees/_header.html.erb (1.4ms)
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered employees/_footer.html.erb (0.4ms)
+  Rendered employees/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employees/14" for 127.0.0.1 at 2019-12-18 17:10:44 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  Rendered employees/_header.html.erb (1.4ms)
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered employees/_footer.html.erb (0.5ms)
+  Rendered employees/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employees/14" for 127.0.0.1 at 2019-12-18 17:10:58 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  Rendered employees/_header.html.erb (2.1ms)
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered employees/_footer.html.erb (0.4ms)
+  Rendered employees/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employees/14" for 127.0.0.1 at 2019-12-18 17:11:15 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  Rendered employees/_header.html.erb (1.2ms)
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered employees/_footer.html.erb (0.4ms)
+  Rendered employees/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employees/14" for 127.0.0.1 at 2019-12-18 17:11:43 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  Rendered employees/_header.html.erb (1.3ms)
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered employees/_footer.html.erb (0.5ms)
+  Rendered employees/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
