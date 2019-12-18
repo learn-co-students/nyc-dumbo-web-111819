@@ -16,7 +16,7 @@ class EmployeesController < ApplicationController
         redirect_to @employee
       else
         flash[:errors] = @employee.errors.full_messages
-        render :new
+        redirect_to employee_new_path
       end
     end
    
@@ -24,7 +24,7 @@ class EmployeesController < ApplicationController
       if get_employee.update(employee_params)
         redirect_to @employee
       else
-        render :edit
+        redirect_to employee_edit_path
       end
     end
   
