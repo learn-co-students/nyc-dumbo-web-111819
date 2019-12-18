@@ -15,7 +15,7 @@ class EmployeesController < ApplicationController
         flash[:success] = "Good job filling out the form!"
         redirect_to @employee
       else
-        flash[:errors] = @garden.errors.full_messages
+        flash[:errors] = @employee.errors.full_messages
         render :new
       end
     end
