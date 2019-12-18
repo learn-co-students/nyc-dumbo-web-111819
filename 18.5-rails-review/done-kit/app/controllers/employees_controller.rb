@@ -7,16 +7,19 @@ class EmployeesController < ApplicationController
   
     def new
       @employee = Employee.new(employee_params)
+      @errors = flash[:errors]
     end
   
     def create
       if @employee.create(employee_params)
+        flash[:success] = "Good job filling out the form!"
         redirect_to @employee
       else
+        flash[:errors] = @garden.errors.full_messages
         render :new
       end
     end
-  
+   
     def update
       if get_employee.update(employee_params)
         redirect_to @employee
