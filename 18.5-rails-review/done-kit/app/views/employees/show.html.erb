@@ -1,0 +1,12 @@
+<%= render 'header' %>
+<h1><%=@employee.name%></h1>
+<br>
+
+<p><strong> Title: </strong><%=@employee.title%></p>
+<p><strong> Office: </strong><%=@employee.office%></p>
+<p><strong> Alias: </strong><%=@employee.alias%></p>
+<p><strong> Dog: </strong><%=link_to @employee.dog.name, dog_path(@employee.dog) %></p>
+
+<%= button_to "Edit #{@employee.name}", edit_employee_path(@employee), method: :get%>
+<%= button_to "Fire #{@employee.name}!", employees_path, method: :delete%>
+<%= render 'footer' %>

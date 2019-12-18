@@ -1,0 +1,13 @@
+<%= render 'header' %>
+
+<h1><%=@dog.name%></h1>
+<br>
+
+<p><strong> Name: </strong><%=@dog.name%></p>
+<p><strong> Breed:</strong> <%=@dog.breed%></p>
+<p><strong> Belongs to: </strong> <ul><% @dog.employees.each do |employee| %></p>
+<li> <%= link_to employee.name, employee %></li>
+<% end %>
+</ul>
+
+<%= render 'footer' %>

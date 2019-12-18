@@ -1,0 +1,11 @@
+<%= render 'header' %>
+<h1>All Employees</h1>
+
+<% @employees.each do |employee| %>
+<ul><li>
+  <%= link_to employee.name, employee %> </li>
+</ul>
+<% end %>
+
+<%= link_to "Add an employee", new_employee_path %>
+<%= render 'footer' %>

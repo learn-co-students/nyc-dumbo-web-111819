@@ -1,0 +1,27 @@
+<%= render 'header' %>
+
+<ol class="errors">
+  <% @employee.errors.full_messages.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ol>
+
+<%= form_for @employee do |f| %>
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :alias %>
+<%= f.text_field :alias %>
+<%= f.label :office %>
+<%= f.text_field :office %>
+<%= f.label :dog_id %>
+<%= f.collection_select :dog_id, Dog.all, :id, :name %>
+
+<%= f.submit %>
+
+<% end %>
+
+<%= render 'footer' %>
