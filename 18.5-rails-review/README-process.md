@@ -9,8 +9,8 @@
 7. Write up seed data just to check associations (I’d say, two instances of each class)
 8. db:seed
 9. rails console: try to access instances of different classes through associations:
-  a. check whether your seeds exist (e.g. School.all or School.all.first)
-  b. check whether associations work (e.g. School.all.first.students would check for all my students and School.all.first.students.first.laptop would check for the laptop of my first student — notice that students are plural because School has_many :students and laptop is singular because laptop belongs_to :student)
+  a. check whether your seeds exist (e.g. School.all or School.first)
+  b. check whether associations work (e.g. School.first.students would check for all my students and School.first.students.first.laptop would check for the laptop of my first student — notice that students are plural because School has_many :students and laptop is singular because laptop belongs_to :student)
   c. to check validations, try to create a student with incomplete required stuff and then checks if it went to your database (e.g. School.all.last) — if it did, you check your validations
 10. check which routes you’d need, go to config, write up the correct routes
 11. write controllers
