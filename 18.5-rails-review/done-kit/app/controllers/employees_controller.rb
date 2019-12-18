@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-    before_action :get_employee, only: [:show, :edit]
+    before_action :get_employee, only: [:show, :edit, :destroy]
   
     def index
       @employees = Employee.all
@@ -11,7 +11,8 @@ class EmployeesController < ApplicationController
     end
   
     def create
-      if @employee.create(employee_params)
+      @employee = Employee.create(employee_params)
+      if @employee.save
         flash[:success] = "Good job filling out the form!"
         redirect_to @employee
       else
@@ -29,8 +30,8 @@ class EmployeesController < ApplicationController
     end
   
     def destroy
-      @employee = Employee.destroy(params[:id])
-      redirect_to employees_path
+        @employee.destroy
+        redirect_to employees_path
     end
   
   private
