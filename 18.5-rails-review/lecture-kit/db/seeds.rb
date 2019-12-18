@@ -2,10 +2,21 @@ Employee.destroy_all
 Dog.destroy_all
 
 5.times do
-  Dog.create(name: Faker::Dog.name, breed: Faker::Dog.breed, age: Faker::Dog.age)
+  Dog.create(
+    name: Faker::Dog.name, 
+    breed: Faker::Dog.breed, 
+    age: Faker::Dog.age)
 end
 
-Employee.create(first_name: "Jim", last_name: "Halpert", alias: "Big Tuna", title: "Regional Co-Manager", office: "Scranton", dog: Dog.second, img_url: "https://s-i.huffpost.com/gen/2028878/images/n-UPROXX-628x314.jpg")
+Employee.create(
+  first_name: "Jim", 
+  last_name: "Halpert", 
+  alias: "Big Tuna", 
+  title: "Regional Co-Manager", 
+  office: "Scranton", 
+  dog: Dog.second, 
+  img_url: "https://s-i.huffpost.com/gen/2028878/images/n-UPROXX-628x314.jpg")
+
 Employee.create(first_name: "Michael", last_name: "Scott", alias: "Prison Mike", title: "Regional Manager", office: "Scranton", dog: Dog.first, img_url: "https://i2.wp.com/mtncatholic.com/wp-content/uploads/2016/10/6357600113572837231773916132_michael-scott-s-top-tantrums.png?fit=500%2C359")
 Employee.create(first_name: "Karen", last_name: "Filippelli", alias: "none", title: "Sales Representative", office: "Stamford", dog: Dog.third, img_url: "https://i.redd.it/vigerabg4x7z.jpg")
 Employee.create(first_name: "Dwight", last_name: "Schrute", alias: "Bear Expert", title: "Assistant to the Regional Manager", office: "Scranton", dog: Dog.first, img_url: "https://typeset-beta.imgix.net/rehost/2016/10/31/dfe8a990-943e-44fc-a613-f6a3c7aaedff.jpg?w=970&h=582&fit=crop&crop=faces&auto=format&q=70")

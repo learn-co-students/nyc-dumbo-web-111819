@@ -163,3 +163,333 @@ Migrating to CreateDogs (20180411182815)
   [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY "employees"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."dog_id" = ? LIMIT ?[0m  [["dog_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_employees_on_dog_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_employees_on_dog_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 2]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 3]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 4]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 5]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bailey"], ["breed", "Otterhound"], ["age", "adult"], ["created_at", "2019-12-18 18:01:59.465379"], ["updated_at", "2019-12-18 18:01:59.465379"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oreo"], ["breed", "Kuvasz"], ["age", "puppy"], ["created_at", "2019-12-18 18:01:59.467503"], ["updated_at", "2019-12-18 18:01:59.467503"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Tyson"], ["breed", "English Springer"], ["age", "adult"], ["created_at", "2019-12-18 18:01:59.468838"], ["updated_at", "2019-12-18 18:01:59.468838"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Maggie"], ["breed", "Basenji"], ["age", "puppy"], ["created_at", "2019-12-18 18:01:59.470058"], ["updated_at", "2019-12-18 18:01:59.470058"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Diesel"], ["breed", "Bull Mastiff"], ["age", "senior"], ["created_at", "2019-12-18 18:01:59.471303"], ["updated_at", "2019-12-18 18:01:59.471303"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Jim"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Halpert"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Big Tuna"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jim"], ["last_name", "Halpert"], ["alias", "Big Tuna"], ["title", "Regional Co-Manager"], ["office", "Scranton"], ["img_url", "https://s-i.huffpost.com/gen/2028878/images/n-UPROXX-628x314.jpg"], ["dog_id", 7], ["created_at", "2019-12-18 18:01:59.476835"], ["updated_at", "2019-12-18 18:01:59.476835"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Michael"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Scott"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Prison Mike"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Manager"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Michael"], ["last_name", "Scott"], ["alias", "Prison Mike"], ["title", "Regional Manager"], ["office", "Scranton"], ["img_url", "https://i2.wp.com/mtncatholic.com/wp-content/uploads/2016/10/6357600113572837231773916132_michael-scott-s-top-tantrums.png?fit=500%2C359"], ["dog_id", 6], ["created_at", "2019-12-18 18:01:59.480125"], ["updated_at", "2019-12-18 18:01:59.480125"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Karen"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Filippelli"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "none"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Sales Representative"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Karen"], ["last_name", "Filippelli"], ["alias", "none"], ["title", "Sales Representative"], ["office", "Stamford"], ["img_url", "https://i.redd.it/vigerabg4x7z.jpg"], ["dog_id", 8], ["created_at", "2019-12-18 18:01:59.482726"], ["updated_at", "2019-12-18 18:01:59.482726"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Dwight"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Schrute"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Bear Expert"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Assistant to the Regional Manager"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Dwight"], ["last_name", "Schrute"], ["alias", "Bear Expert"], ["title", "Assistant to the Regional Manager"], ["office", "Scranton"], ["img_url", "https://typeset-beta.imgix.net/rehost/2016/10/31/dfe8a990-943e-44fc-a613-f6a3c7aaedff.jpg?w=970&h=582&fit=crop&crop=faces&auto=format&q=70"], ["dog_id", 6], ["created_at", "2019-12-18 18:01:59.485167"], ["updated_at", "2019-12-18 18:01:59.485167"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Jan"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Levinson"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "none"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "VP of Sales"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mDog Load (0.0ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Toby"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Flenderson"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "The worst"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "HR Representative"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Toby"], ["last_name", "Flenderson"], ["alias", "The worst"], ["title", "HR Representative"], ["office", "Scranton"], ["img_url", "https://pbs.twimg.com/media/DAM0C36VwAA19DM.jpg:large"], ["dog_id", 8], ["created_at", "2019-12-18 18:01:59.490078"], ["updated_at", "2019-12-18 18:01:59.490078"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Pam"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Beesly"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Beesly"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Office Administrator"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Pam"], ["last_name", "Beesly"], ["alias", "Beesly"], ["title", "Office Administrator"], ["office", "Scranton"], ["img_url", "http://img4.bdbphotos.com/images/700x350/q/m/qm3wuw0enjlzen.jpg?skj2io4l"], ["dog_id", 10], ["created_at", "2019-12-18 18:01:59.492865"], ["updated_at", "2019-12-18 18:01:59.492865"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Kelly"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Kapoor"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "none"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Customer Service Representative"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mDog Load (0.0ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Oscar"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Martinez"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "none"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Accountant"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mDog Load (0.0ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Darryl"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Philbin"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "none"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Warehouse Assistant"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 6]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 7]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 8]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 9]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 10]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "dogs" WHERE "dogs"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Diamond"], ["breed", "Wheaten Terrier"], ["age", "senior"], ["created_at", "2019-12-18 18:02:12.077292"], ["updated_at", "2019-12-18 18:02:12.077292"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bruno"], ["breed", "Miniature Pinscher"], ["age", "young"], ["created_at", "2019-12-18 18:02:12.080055"], ["updated_at", "2019-12-18 18:02:12.080055"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Honey"], ["breed", "Chihuahua"], ["age", "puppy"], ["created_at", "2019-12-18 18:02:12.081397"], ["updated_at", "2019-12-18 18:02:12.081397"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Honey"], ["breed", "Wheaten Terrier"], ["age", "puppy"], ["created_at", "2019-12-18 18:02:12.082868"], ["updated_at", "2019-12-18 18:02:12.082868"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Baby"], ["breed", "Afghan Hound"], ["age", "adult"], ["created_at", "2019-12-18 18:02:12.084384"], ["updated_at", "2019-12-18 18:02:12.084384"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Jim"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Halpert"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Big Tuna"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jim"], ["last_name", "Halpert"], ["alias", "Big Tuna"], ["title", "Regional Co-Manager"], ["office", "Scranton"], ["img_url", "https://s-i.huffpost.com/gen/2028878/images/n-UPROXX-628x314.jpg"], ["dog_id", 12], ["created_at", "2019-12-18 18:02:12.090363"], ["updated_at", "2019-12-18 18:02:12.090363"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Michael"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Scott"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Prison Mike"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Manager"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Michael"], ["last_name", "Scott"], ["alias", "Prison Mike"], ["title", "Regional Manager"], ["office", "Scranton"], ["img_url", "https://i2.wp.com/mtncatholic.com/wp-content/uploads/2016/10/6357600113572837231773916132_michael-scott-s-top-tantrums.png?fit=500%2C359"], ["dog_id", 11], ["created_at", "2019-12-18 18:02:12.093638"], ["updated_at", "2019-12-18 18:02:12.093638"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Karen"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Filippelli"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "none"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Sales Representative"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Karen"], ["last_name", "Filippelli"], ["alias", "none"], ["title", "Sales Representative"], ["office", "Stamford"], ["img_url", "https://i.redd.it/vigerabg4x7z.jpg"], ["dog_id", 13], ["created_at", "2019-12-18 18:02:12.096905"], ["updated_at", "2019-12-18 18:02:12.096905"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Dwight"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Schrute"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Bear Expert"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Assistant to the Regional Manager"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Dwight"], ["last_name", "Schrute"], ["alias", "Bear Expert"], ["title", "Assistant to the Regional Manager"], ["office", "Scranton"], ["img_url", "https://typeset-beta.imgix.net/rehost/2016/10/31/dfe8a990-943e-44fc-a613-f6a3c7aaedff.jpg?w=970&h=582&fit=crop&crop=faces&auto=format&q=70"], ["dog_id", 11], ["created_at", "2019-12-18 18:02:12.100346"], ["updated_at", "2019-12-18 18:02:12.100346"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Jan"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Levinson"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "none"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "VP of Sales"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mDog Load (0.0ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Toby"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Flenderson"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "The worst"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "HR Representative"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Toby"], ["last_name", "Flenderson"], ["alias", "The worst"], ["title", "HR Representative"], ["office", "Scranton"], ["img_url", "https://pbs.twimg.com/media/DAM0C36VwAA19DM.jpg:large"], ["dog_id", 13], ["created_at", "2019-12-18 18:02:12.105799"], ["updated_at", "2019-12-18 18:02:12.105799"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Pam"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Beesly"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Beesly"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Office Administrator"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Pam"], ["last_name", "Beesly"], ["alias", "Beesly"], ["title", "Office Administrator"], ["office", "Scranton"], ["img_url", "http://img4.bdbphotos.com/images/700x350/q/m/qm3wuw0enjlzen.jpg?skj2io4l"], ["dog_id", 15], ["created_at", "2019-12-18 18:02:12.109021"], ["updated_at", "2019-12-18 18:02:12.109021"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Kelly"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Kapoor"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "none"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Customer Service Representative"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mDog Load (0.0ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Oscar"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Martinez"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "none"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Accountant"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mDog Load (0.0ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."first_name" = ? LIMIT ?[0m  [["first_name", "Darryl"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."last_name" = ? LIMIT ?[0m  [["last_name", "Philbin"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "none"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Warehouse Assistant"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-12-18 13:02:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 322ms (Views: 317.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dogs" for 127.0.0.1 at 2019-12-18 13:02:49 -0500
+Started GET "/employees" for 127.0.0.1 at 2019-12-18 13:02:59 -0500
+Started GET "/employees" for 127.0.0.1 at 2019-12-18 13:02:59 -0500
+Processing by DogsController#index as HTML
+  Rendering dogs/index.html.erb within layouts/application
+  Rendered dogs/_header.html.erb (0.4ms)
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 12]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 13]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 14]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 15]]
+  Rendered dogs/_footer.html.erb (0.2ms)
+  Rendered dogs/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 41ms (Views: 34.8ms | ActiveRecord: 1.2ms)
+
+
+Processing by EmployeesController#index as HTML
+Processing by EmployeesController#index as HTML
+  Rendering employees/index.html.erb within layouts/application
+  Rendering employees/index.html.erb within layouts/application
+  Rendered employees/_header.html.erb (0.3ms)
+  Rendered employees/_header.html.erb (0.1ms)
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/_footer.html.erb (0.3ms)
+  Rendered employees/index.html.erb within layouts/application (12.0ms)
+  Rendered employees/_footer.html.erb (0.0ms)
+  Rendered employees/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/employees/new" for 127.0.0.1 at 2019-12-18 13:03:02 -0500
+Processing by EmployeesController#new as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: employee):
+  
+app/controllers/employees_controller.rb:39:in `employee_params'
+app/controllers/employees_controller.rb:9:in `new'

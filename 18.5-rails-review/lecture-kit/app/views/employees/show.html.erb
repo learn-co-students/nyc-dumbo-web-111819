@@ -1,0 +1,5 @@
+<%= render 'header' %>
+
+<h1> <%= @employee.name %></h1>
+
+<%= button_to "Fire #{@employee.name}", @employee, :method => :delete%>

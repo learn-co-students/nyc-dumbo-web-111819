@@ -1,0 +1,7 @@
+<%= render 'header' %>
+
+<h1> Hello Here are our employees </h1>
+
+<% @employees.each do |e|%>
+<li> <%= link_to e.name, employee_path(e)%> </li>
+<% end %>
