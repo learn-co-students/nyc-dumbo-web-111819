@@ -1,0 +1,28 @@
+<h1>Plant a Plant</h1>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @plant do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :smell %>
+  <%= f.text_field :smell %>
+  <br>
+  <%= f.label :leaf_count %>
+  <%= f.number_field :leaf_count %>
+  <br>
+  <%= f.label :color %>
+  <%= f.collection_select :color, @plant.valid_colors, :to_s, :to_s %>
+  <br>
+  <%= f.label :garden_id %>
+  <%= f.collection_select :garden_id, @gardens, :id, :name %>
+  <br>
+  <%= f.submit %>
+<% end %>

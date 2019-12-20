@@ -1,0 +1,21 @@
+<h1><%= @garden.name %></h1>
+<em><%= @garden.location %></em>
+<p>
+  Length: <%= @garden.length %>
+  <br>
+  Width: <%= @garden.width %>
+</p>
+<p>
+  Gardeners: <%= "🤠" * @garden.staff_count %>
+</p>
+<p>
+  <%= link_to 'Edit', edit_garden_path(@garden) %>
+  <%= button_to "delete", garden_path(@garden), method: :delete %>
+</p>
+
+<h2>My Plot</h2>
+<div class="garden-plot" style="grid-template-columns: repeat(<%= @garden.width %>, 1fr)">
+  <% (@garden.width * @garden.length).times do |t| %>
+    <div class="item"><%= t %></div>
+  <% end %>
+</div>

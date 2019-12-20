@@ -1,0 +1,181 @@
+@font-face {
+  font-family: Stardew;
+  src: font-url('/assets/StardewValley.ttf') format("truetype"), 
+    font-url('/assets/StardewValley.woff') format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* mini reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* layout */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #FFF8E7;
+}
+
+.main .container {
+  padding: 1.5em 3em;
+}
+
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Stardew, cursive;
+  margin: 1em 0 1.5em;
+  line-height: 1.25em;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* menu */
+.menu {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #5CA415;
+}
+
+.menu .container,
+.menu nav {
+  display: flex;
+}
+
+.menu .logo {
+  background-image: url("logo.png");
+  background-size: 80px 40px;
+  width: 80px;
+  height: 40px;
+  background-repeat: no-repeat;
+  margin-right: 2em;
+}
+
+.menu .item {
+  padding: 1em;
+  color: #f1f1f1;
+  flex: 0 0 auto;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.menu a.item:hover {
+  opacity: 0.9;
+  background-color: #bd1f1f;
+}
+
+.menu .right {
+  margin-left: auto;
+  display: flex;
+}
+
+/* responsive width */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 899px) {
+  .container {
+    width: 700px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
+
+/* forms */
+.form {
+  width: 100%;
+  background-color: #226F54;
+  padding: 1em;
+}
+
+.form label {
+  display: block;
+  font-family: 'Press Start 2P', cursive;
+  margin: 1em 0 0.25em;
+}
+
+.form input, 
+.form select,
+.form textarea {
+  font-family: 'Press Start 2P', cursive;
+  width: 100%;
+  border: 1px solid rgba(34,36,38,.15);
+  padding: 0.5em 1em;
+}
+
+.form select {
+  outline: 0;
+  background: #fff;
+  border-radius: 0;
+	line-height:normal;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	appearance:none;
+}
+
+.form input[type=checkbox],
+.form input[type=submit] {
+  width: auto;
+}
+
+.form label.checkbox {
+  display: initial;
+}
+
+.form .messages {
+  padding: 1em;
+}
+
+/* buttons */
+button,
+input[type=submit] {
+  display: block;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0.75em 1.5em;
+  transition: opacity 0.2s ease;
+  margin-right: 1em;
+  font-family: "Press Start 2P";
+  padding: 1em;
+  border: 2px solid #111;
+}
+
+button:hover,
+input[type=submit]:hover {
+  background-color: #fff;
+}
+
+.button_to {
+  display: inline-block;
+  padding: 1em 0;
+}
+
+/* garden */ 
+.garden-plot {
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.garden-plot .item {
+  border: 1px solid #000;
+  background-color: brown;
+}
