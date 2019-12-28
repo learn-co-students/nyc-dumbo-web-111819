@@ -1,28 +1,37 @@
-<h1>Plant a Plant</h1>
+<h1>Plant a Plant in <%= @garden.name %></h1>
 
-<% if @errors %>
-  <ul>
-    <% @errors.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_for @plant do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :smell %>
-  <%= f.text_field :smell %>
-  <br>
-  <%= f.label :leaf_count %>
-  <%= f.number_field :leaf_count %>
-  <br>
+<%= form_for @plant, url: garden_plants_path(@garden), html: { class: "form" } do |f| %>
+  
+  <%= f.label :emoji %>
+  <%= f.text_field :emoji %>
+  
   <%= f.label :color %>
-  <%= f.collection_select :color, @plant.valid_colors, :to_s, :to_s %>
-  <br>
-  <%= f.label :garden_id %>
-  <%= f.collection_select :garden_id, @gardens, :id, :name %>
-  <br>
+  <%= f.collection_select :color, @valid_colors, :to_s, :to_s %>
+  
+  <%= f.label :x, "X Coordinate" %>
+  <%= f.number_field :x %>
+  
+  <%= f.label :y, "Y Coordinate" %>
+  <%= f.number_field :y %>
+  
+  <%= f.label :width %>
+  <%= f.number_field :width %>
+  
+  <%= f.label :length %>
+  <%= f.number_field :length %>
+  
+  <% if @errors %>
+    <ol class="messages">
+      <% @errors.each do |error| %>
+        <li>
+          <%= error %>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
+
+<h2>Current Plants for <%= @garden.name %></h2>
+<%= render 'gardens/plot' %>

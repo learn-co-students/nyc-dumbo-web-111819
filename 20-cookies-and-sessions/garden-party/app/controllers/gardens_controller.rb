@@ -8,6 +8,8 @@ class GardensController < ApplicationController
 
   # get '/gardens/:id'
   def show
+    # plants!
+    @matrix = @garden.to_matrix
   end
 
   # get "/gardens/new"

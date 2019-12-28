@@ -1,20 +1,2 @@
-<h1>Make a garden</h1>
-
-<%= form_for @garden do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <br>
-  <%= f.label :staff_count %>
-  <%= f.number_field :staff_count %>
-  <br>
-  <%= f.label :length %>
-  <%= f.number_field :length %>
-  <br>
-  <%= f.label :width %>
-  <%= f.number_field :width %>
-  <br>
-  <%= f.submit %>
-<% end %>
+<h1>Edit yer garden</h1>
+<%= render 'form' %>

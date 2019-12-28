@@ -12,4 +12,20 @@ class Garden < ApplicationRecord
   validates :length, inclusion: { in: 5..50, message: "needs to be between 5 and 50" } 
 
   # size and width have in a range 5..50
+
+  def to_matrix
+    matrix = Array.new(width) { Array.new(length) }
+    plants.each do |plant|
+      for x in plant.x...plant.end_x do
+        for y in plant.y...plant.end_y do
+          matrix[y][x] = plant
+        end
+      end
+    end
+    matrix
+  end
+
+  def crops
+    plants.pluck(:emoji).uniq.join("")
+  end
 end

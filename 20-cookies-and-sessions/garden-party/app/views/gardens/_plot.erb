@@ -1,0 +1,13 @@
+<div class="garden-plot">
+  <% @garden.to_matrix.each do |row| %>
+    <div class="row">
+      <% row.each do |plant| %>
+        <div class="item">
+          <% if plant %>
+            <%= link_to plant.emoji, plant %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
