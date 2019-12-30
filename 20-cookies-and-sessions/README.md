@@ -10,9 +10,9 @@ Sessions & Cookies
 **Problem Statement**: We want to start monetizing the content on our site through advertisements, so we need to add a paywall. After viewing a page on our site 5 times, they'll have to watch an ad before viewing any more pages.
 
 ### Outline
+- [ ] Demo updated Rails application
 - [ ] Discuss how websites use cookies
   - [ ] Twitter, NYTimes
-- [ ] Demo updated Rails application
 - [ ] Use cookies to persist information about the client across requests
 - [ ] Demonstrate the `session` hash in Rails
   - [ ] Get/set, encryption, clear
