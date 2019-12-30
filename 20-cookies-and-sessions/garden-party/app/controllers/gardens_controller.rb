@@ -9,6 +9,7 @@ class GardensController < ApplicationController
   # get '/gardens/:id'
   def show
     # set_garden
+    session[:counter] = session[:counter] - 1
   end
 
   # get "/gardens/new"
