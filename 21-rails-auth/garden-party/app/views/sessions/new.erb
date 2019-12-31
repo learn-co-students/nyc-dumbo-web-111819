@@ -1,0 +1,21 @@
+<h1>Login!</h1>
+
+<%= form_for :session, url: login_path, html: { class: "form "} do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  
+  <% if @errors %>
+    <ol class="messages">
+      <% @errors.each do |error| %>
+        <li>
+          <%= error %>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+
+  <%= f.submit "Login" %>
+<% end %>

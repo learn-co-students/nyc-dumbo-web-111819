@@ -1,9 +1,18 @@
 puts "Resetting gardens..."
 Garden.destroy_all
 
+puts "Seeding users..."
+20.times do
+  Gardener.create(
+    username: Faker::FunnyName.name.downcase,
+    password: "password123"
+  )
+end
+
 puts "Making gardens..."
 20.times do
   Garden.create(
+    gardener: Gardener.order("RANDOM()").first,
     name: "#{Faker::Games::Pokemon.location} Garden",
     width: 10,
     length: 10,

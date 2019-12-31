@@ -16,9 +16,26 @@ Rails Authentication & Authorization
 
 ### Discussion
 - What's the difference between Authentication vs Authorization?
+  - Authentication - who someone is
+  - Authorization - what can you do
+
+- Why don't we want to save a user's password in plaintext?
+  - a hacker could access the database and log into our website as you
+  - most users use the same password, so we could compromise 
+
 - What is hashing and how does it make password storage more secure?
+  "password123" -> "jahflkjashdflajshdhflljhsdafljhsab"
+  "password123" -> "jahflkjashdflajshdhflljhsdafljhsab"
+  "password321" -> "asdkljfhy89pq34thrkdnf;kadsjaj"
+
 - What are rainbow tables and how can they defeat a password hashing strategy?
+
+
 - What is salting? What is a salt? How can it defeat a rainbow tables attack?
+  Create Pw: "password123" + ".aksjdhfalksdjfh" -> "asdiufaoer7iuaefh23riuhfbalsf" = 
+    ".aksjdhfalksdjfh|asdiufaoer7iuaefh23riuhfbalsf"
+  Create Pw: "password123" + "qo8237rilwukfjhh" -> "q8734iuhfawlirq3y4or8wieufaef"
+  Login: "password123" + ".aksjdhfalksdjfh" -> "asdiufaoer7iuaefh23riuhfbalsf"
 
 ### Implemention
 - Create a `username` and `password_digest` field for Authentication
@@ -29,6 +46,11 @@ Rails Authentication & Authorization
 - When to use a "SessionsController" and when to use ApplicationController
 - Locking down parts of our application
 - Using information about our signed in user
+
+
+Authorization
+- can't create a garden unless logged in
+- limit functionality of edit and delete for a garden
 
 
 ### How does auth work in theory?

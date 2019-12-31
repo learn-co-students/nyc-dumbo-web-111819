@@ -15,15 +15,20 @@
       <div class="container">
         <nav>
           <%= link_to "Gardens", gardens_path, class: "item" %>
-          <%= link_to "New Garden", new_garden_path, class: "item" %>
+          <%= link_to "My Gardens", my_gardens_path, class: "item" %>
+          <% if @logged_in_gardener %>
+            <%= link_to "New Garden", new_garden_path, class: "item" %>
+          <% end %>
         </nav>
         <nav class="right">
-          <% if @gardener %>
+          <% if @logged_in_gardener %>
             <span class="item">
-              Welcome, <%= "#{@gardener.username}" %>!
+              Welcome, <%= "#{@logged_in_gardener.username}" %>!
             </span>
+            <%= link_to "Logout", logout_path, method: :delete, class: "item" %>
           <% else %>
             <%= link_to "Sign Up", signup_path, class: "item" %>
+            <%= link_to "Login", login_path, class: "item" %>
           <% end %>
         </nav>
       </div>

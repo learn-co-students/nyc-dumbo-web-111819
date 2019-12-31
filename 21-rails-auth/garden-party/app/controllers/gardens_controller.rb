@@ -1,5 +1,11 @@
 class GardensController < ApplicationController
   before_action :set_garden, only: [:show, :edit, :update, :destroy]
+  before_action :authorized_gardener, only: [:show, :edit, :update, :destroy]
+
+  def my_gardens
+    @gardens = @logged_in_gardener.gardens
+    render :index
+  end
 
   # get '/gardens'
   def index
@@ -16,11 +22,12 @@ class GardensController < ApplicationController
   def new
     @garden = Garden.new
     @errors = flash[:errors]
+    # render :new
   end
 
   # post '/gardens'
   def create
-    @garden = Garden.create(garden_params)
+    @garden = @logged_in_gardener.gardens.create(garden_params)
     if @garden.valid?
       redirect_to gardens_path
     else
@@ -31,6 +38,7 @@ class GardensController < ApplicationController
 
   # get '/gardens/:id/edit'
   def edit
+    
   end
 
   # patch '/gardens/:id'
@@ -48,6 +56,10 @@ class GardensController < ApplicationController
   end
 
   private
+
+  def authorized_gardener
+    redirect_to gardens_path unless @garden.gardener == @logged_in_gardener
+  end
 
   def set_garden
     @garden = Garden.find_by(id: params[:id])

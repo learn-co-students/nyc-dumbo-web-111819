@@ -1,4 +1,5 @@
 class Garden < ApplicationRecord
+  belongs_to :gardener
   has_many :plants, dependent: :destroy
 
   # staff count can't exceed 100 ppl

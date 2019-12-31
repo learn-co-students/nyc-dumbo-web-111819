@@ -1,13 +1,16 @@
 <h1><%= @garden.name %></h1>
+<h2><%= @garden.gardener.username %></h2>
 
 <% if session[:counter] > 0 %>
   <h2>Page Views: <%= session["counter"] %></h2>
   <%= render 'plot' %>
-  <p>
-    <%= button_to "Edit", edit_garden_path(@garden), method: :get %>
-    <%= button_to "Delete", garden_path(@garden), method: :delete %>
-    <%= button_to "New Plant", new_garden_plant_path(@garden), method: :get %>
-  </p>
+  <% if @garden.gardener == @logged_in_gardener %>
+    <p>
+      <%= button_to "Edit", edit_garden_path(@garden), method: :get %>
+      <%= button_to "Delete", garden_path(@garden), method: :delete %>
+      <%= button_to "New Plant", new_garden_plant_path(@garden), method: :get %>
+    </p>
+  <% end %>
 <% else %>
   <iframe width="973" height="730" src="https://www.youtube.com/embed/dj61bOvF14A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <%= button_to "I solemnly swear I watched the whole dang ad", "/sessions/reset", method: :patch %>

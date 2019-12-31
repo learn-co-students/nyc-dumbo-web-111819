@@ -1,4 +1,6 @@
 class Gardener < ApplicationRecord
+  has_many :gardens
+  
   has_secure_password
 
   validates :username, uniqueness: true
