@@ -18,9 +18,13 @@
           <%= link_to "New Garden", new_garden_path, class: "item" %>
         </nav>
         <nav class="right">
-          <span class="item">
-            Welcome, gardener!
-          </span>
+          <% if @gardener %>
+            <span class="item">
+              Welcome, <%= "#{@gardener.username}" %>!
+            </span>
+          <% else %>
+            <%= link_to "Sign Up", signup_path, class: "item" %>
+          <% end %>
         </nav>
       </div>
     </header>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gardeners
   resources :plants, only: [:show]
   
   resources :gardens do
@@ -6,4 +7,7 @@ Rails.application.routes.draw do
   end
 
   patch "/sessions/reset", to: "sessions#reset_counter"
+
+  get "/signup", to: "gardeners#new", as: "signup"
+  post "/signup", to: "gardeners#create"
 end
