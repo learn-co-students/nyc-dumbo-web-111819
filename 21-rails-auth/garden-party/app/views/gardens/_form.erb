@@ -1,0 +1,28 @@
+<%= form_for @garden, html: { class: "form "} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  
+  <%= f.label :staff_count %>
+  <%= f.number_field :staff_count %>
+  
+  <%= f.label :length %>
+  <%= f.number_field :length %>
+  
+  <%= f.label :width %>
+  <%= f.number_field :width %>
+  
+  <% if @errors %>
+    <ol class="messages">
+      <% @errors.each do |error| %>
+        <li>
+          <%= error %>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

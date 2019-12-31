@@ -1,0 +1,11 @@
+<h1>Welcome to the Garden Party!</h1>
+<h3>Pick a garden to visit:</h3>
+
+<div class="gardens">
+  <% @gardens.each do |garden| %>
+    <%= link_to garden, class: "card" do %>
+      <h4><%= garden.name %></h4>
+      <p><%= garden.crops %></p>
+    <% end %>
+  <% end %>
+</div>

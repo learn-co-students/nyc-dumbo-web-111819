@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GardenParty</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Press+Start+2P&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="menu">
+      <div class="container">
+        <nav>
+          <%= link_to "Gardens", gardens_path, class: "item" %>
+          <%= link_to "New Garden", new_garden_path, class: "item" %>
+        </nav>
+        <nav class="right">
+          <span class="item">
+            Welcome, gardener!
+          </span>
+        </nav>
+      </div>
+    </header>
+    <div class="main">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
