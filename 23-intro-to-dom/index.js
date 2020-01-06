@@ -83,7 +83,7 @@ allBadEmojis.forEach( removeOneLi )
 
 
 
-
+// CallBack Review
 function isItEven(first, second, third){
   console.log(first, second, third);
 
