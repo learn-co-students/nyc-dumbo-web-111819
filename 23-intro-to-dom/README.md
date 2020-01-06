@@ -46,8 +46,17 @@
 
 # DOM questions
 * What is the DOM and why do I care about it?
+  - DOM: Document Object Model (Modeling HTML tags as objects)
+
 * What does it mean that the DOM is a tree?
+  - Each node in a tree has one parent
+  - And parents can have multiple (0 to infinity) children
+
 * What are the key parts of an HTML tag?
+  - Opening Tag
+  - Content/children between the tags
+  - Closing Tag
+  
   * What is an attribute?
   * What is an ID?
 * How do I:
