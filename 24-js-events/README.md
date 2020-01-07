@@ -11,7 +11,7 @@
 - Discuss browser events
 - Manipulate Wikipedia using browser events
   - on clicking the header, change the color to red
-  - (class exercise) on clicking *any* p tag, change the font to comic sans ("Comic Sans MS", cursive, sans-serif)
+  - (class exercise) on clicking *any* p tag, change the font to comic sans   - this is the font-family to use: "Comic Sans MS", cursive, sans-serif
     - what happens if a new p tag gets added to the page?
 - Make our nice list for Grandma
   - defer/DOMContentLoaded
@@ -24,12 +24,20 @@
 
 ### What are some common things users do on a webpage?
 
+click something
+type (key press)
+hover
+scroll
+drag
+submit
+(page loads)
+
 [All the Events](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 ### What are the steps for creating interaction with the DOM?
-1. 
-2. 
-3. 
+1. Figure out which element is triggering the event
+2. Decide what of type event we're handling
+3. Write a callback function that will run when the event happens
 
 ## What are Web Events 🤔
 
