@@ -9,24 +9,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Render Helpers
   function renderOneEmoji(emoji) {
+    // <li>💪</li>
+    // 1. document.createElement
     const newLi = document.createElement("li")
     newLi.textContent = emoji
     emojiList.append(newLi)
-  }
-
-  // Event Handlers
-  function handleTacoClick() {
-    // <li>💪</li>
-    // 1. document.createElement
-    renderOneEmoji("🌮")
 
     // 2. emojiList.innerHTML
     // emojiList.innerHTML += "<li>🌮</li>"
 
     // 3. insertAdjacentHTML
     // emojiList.insertAdjacentHTML("beforeend", "<li>🌮</li>")
+  }
 
-    console.log("u clicked yay")
+  // Event Handlers
+  function handleTacoClick() {
+    renderOneEmoji("🌮")
   }
 
   function handleEmojiFormSubmit(event) {
