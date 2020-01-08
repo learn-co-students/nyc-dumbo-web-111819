@@ -14,3 +14,33 @@
 - When X happens,
 - We make Y fetch
 - And slap it on Z DOM
+
+Asynchronous
+Javascript
+And
+XML (Extensive Markup Language)
+
+JSON - Javascript Object Notation (Hash)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
