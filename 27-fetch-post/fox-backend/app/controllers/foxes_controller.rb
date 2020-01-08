@@ -15,6 +15,7 @@ class FoxesController < ApplicationController
     end
 
     def create
+      # byebug
       render json: Fox.create(fox_params)
     end
 
