@@ -9,6 +9,36 @@
       "id": 2,
       "title": "Master JavaScript",
       "done": false
+    },
+    {
+      "title": "Make Eric Proud",
+      "done": false,
+      "id": 3
+    },
+    {
+      "title": "Now it won't be displayed",
+      "done": false,
+      "id": 4
+    },
+    {
+      "title": "this will work ish",
+      "done": false,
+      "id": 5
+    },
+    {
+      "title": "make the refactor work",
+      "done": false,
+      "id": 6
+    },
+    {
+      "title": "make it work?",
+      "done": false,
+      "id": 7
+    },
+    {
+      "title": "adadsasd",
+      "done": false,
+      "id": 8
     }
   ],
   "snacks": [

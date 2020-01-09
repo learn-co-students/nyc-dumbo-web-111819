@@ -13,9 +13,14 @@
 2. Make Y fetch happen
 3. Slap Z on the DOM!
 
+Things to talk about:
+- what happens in a fetch, promises vs response object
+- delegation vs closure - approaches to handling child events
+- fetch using https verbs
+
 ## Deliverables
 
-- [ ] When the page loads, fetch all todo items and add them to the `to-do-items` list. Each `li` should have the following HTML:
+- [x] When the page loads, fetch all todo items and add them to the `to-do-items` list. Each `li` should have the following HTML:
 
 ```html
 <li class="item">
@@ -25,7 +30,7 @@
 </li>
 ```
 
-- [ ] When a user submits the `new-to-do` form, create a new todo item. The new todo item should be persisted in the back end and should also be added to the `to-do-items` list.
+- [x] When a user submits the `new-to-do` form, create a new todo item. The new todo item should be persisted in the back end and should also be added to the `to-do-items` list.
 - [ ] When a user clicks the "X" button next to a todo item, the todo item should be removed from the DOM and deleted on the server.
 - [ ] When a user clicks the checkbox next to a todo item on the page, the todo's "done" status should between true and false. This information should be persisted on the backend and should also be reflected in the DOM.
 
