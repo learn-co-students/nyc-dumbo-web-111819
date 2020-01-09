@@ -1,7 +1,5 @@
 console.log("%c Hello! Please write some nice Javascript code here.", "color: lightseagreen")
 
-let allTodos = []
-
 // DOM Elements
 const todoList = document.querySelector("#to-do-items")
 const todoForm = document.querySelector("#new-to-do")
@@ -13,22 +11,16 @@ const TODO_URL = "http://localhost:3000/to_do_items"
 fetch(TODO_URL)
   .then(r => r.json())
   .then(todos => {
-    allTodos = todos
     renderAllTodos(todos)
   })
 
-console.log(allTodos)
-
 // Event Listeners
 todoForm.addEventListener("submit", (e) => {
-  console.log(allTodos)
   e.preventDefault()
-  console.log("this form submits")
 
   // get some data from the form input
   const newTodoTitle = e.target.title.value
 
-  console.log("line 25")
   // fetch -> send data to the server
   fetch(TODO_URL, {
     method: "POST",
@@ -42,18 +34,14 @@ todoForm.addEventListener("submit", (e) => {
   })
     .then(r => r.json())
     .then(todo => {
-      console.log("line 39")
       // add the todo to the DOM
       renderOneTodo(todo)
     })
-
-  console.log("line 44")
-
 })
 
 // Render Helpers
 function renderOneTodo(todo) {
-  console.log(todo)
+  console.log("rendering one todo:", todo)
   // create the element
   const newLi = document.createElement("li")
   newLi.classList.add("item")
@@ -74,12 +62,3 @@ function renderAllTodos(todoArray) {
     renderOneTodo(todo)
   })
 }
-
-// <li class="item">
-//   <input id="to-do-item-1" type="checkbox" checked />
-//   <label for="to-do-item-1" class="js-title middle aligned content">Walk the cat</label>
-//   <button>×</button>
-// </li>
-
-// When the page loads, fetch all todo items and add them to the `to-do-items` list. 
-// Each `li` should have the following HTML:
