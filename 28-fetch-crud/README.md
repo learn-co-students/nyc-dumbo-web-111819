@@ -31,8 +31,8 @@ Things to talk about:
 ```
 
 - [x] When a user submits the `new-to-do` form, create a new todo item. The new todo item should be persisted in the back end and should also be added to the `to-do-items` list.
-- [ ] When a user clicks the "X" button next to a todo item, the todo item should be removed from the DOM and deleted on the server.
-- [ ] When a user clicks the checkbox next to a todo item on the page, the todo's "done" status should between true and false. This information should be persisted on the backend and should also be reflected in the DOM.
+- [x] When a user clicks the "X" button next to a todo item, the todo item should be removed from the DOM and deleted on the server.
+- [ ] When a user clicks the checkbox next to a todo item on the page, the todo's "done" status should toggle between true and false. This information should be persisted on the backend and should also be reflected in the DOM.
 
 ## API Documentation
 When you're fetching data from a remote source, you won't always have control over how the server expects _requests_ to be formatted, and what kind of data you'll get in the _response_. 
