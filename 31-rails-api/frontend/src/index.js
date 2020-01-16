@@ -78,7 +78,8 @@ function handleDelete(toy, div){
     method: "DELETE"
   })
   .then(r => r.json())
-  .then(() => {
+  .then((theThingIGetBack) => {
+    console.log(theThingIGetBack);
     div.remove()
   })
 }
@@ -119,8 +120,25 @@ toyForm.addEventListener("submit", (event) => {
     }
   })
     .then(res => res.json())
-    .then(newToy => {
-      render(newToy)
+    .then(response => {
+      if (response.id) {
+        render(response)
+      } else {
+        console.log(response)
+        throw new Error("It failed")
+      }
       event.target.reset()
     })
+    .catch(console.error)
+
+
+
+
+
+
+
+
+
+
+
 })
