@@ -4,8 +4,8 @@ class Instructor
 
   attr_reader :name, :full_name
 
-  def initialize(name, full_name)
-    @name = name
+  def initialize(name_arg, full_name)
+    @name = name_arg
     @full_name = full_name
   end
 
