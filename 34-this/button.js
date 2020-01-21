@@ -15,7 +15,7 @@ class ButtonJS{
     // EVENT LISTENERS
     this.buttonTag.addEventListener("click", this.handleClick)
 
-
+    // REACT:
     // <button onClick={this.handleClick}>{`Click: ${this.color}`}</button>
   }
 
