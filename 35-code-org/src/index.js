@@ -1,7 +1,3 @@
-const addBtn = document.querySelector('#new-toy-btn')
-const toyFormContainer = document.querySelector('.container')
-let addToy = false
-
 addBtn.addEventListener('click', () => {
   addToy = !addToy
   if (addToy) {
@@ -10,3 +6,11 @@ addBtn.addEventListener('click', () => {
     toyFormContainer.style.display = 'none'
   }
 })
+
+
+Adaptor.getAllToyboxes()
+  .then((toyboxes) => {
+    toyboxes.forEach(box => {
+      new Toybox(box)
+    })
+  })
