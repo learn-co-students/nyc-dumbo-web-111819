@@ -15,8 +15,16 @@ newBurgerForm.addEventListener("submit", handleCreateBurger)
 function handlePastOrderForm(evt){
   evt.preventDefault()
   let name = evt.target.past_name.value
-
-  console.log(name);
+  Adaptor.orderHistory(name)
+  .then((resp) => {
+    if (resp.id) {
+      console.log(resp);
+      ordersDiv.innerHTML = ""
+      resp.orders.forEach(order => {
+        new PastOrder(order)
+      })
+    }
+  })
 }
 
 
@@ -25,14 +33,36 @@ function handleNewOrderForm(evt){
   evt.preventDefault()
   let name = evt.target.new_name.value
 
-  console.log(name, ordersArray);
+  Adaptor.createNewOrder(name, ordersArray)
+  .then((user) => {
+    arrayOfIds = []
+    ordersUL.innerHTML = ""
+    totalSpan.innerText = "0"
+    evt.target.reset()
+  })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function handleCreateBurger(evt){
   evt.preventDefault()
   let form = evt.target
-  
+
   let name = form.name.value
   let description = form.description.value
   let image = form.image.value

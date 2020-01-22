@@ -6,7 +6,7 @@ class BurgersController < ApplicationController
   end
 
   private
-  
+
   def burger_params
     params.permit(:name, :image, :description, :price, :category_id)
   end
