@@ -16,9 +16,16 @@ class Form extends Component {
 
   handleSubmit = (evt) => {
     evt.preventDefault()
-    console.log(this.props);
     let newMessage = this.state
-    this.props.addMessage(newMessage)
+    // fetch("/messages","POST")
+    // .then(r => r.json())
+    // .then(newMessage => {
+      this.props.addMessage(newMessage)
+    // })
+    this.setState({
+      name: "",
+      content: ""
+    })
   }
 
   render() {

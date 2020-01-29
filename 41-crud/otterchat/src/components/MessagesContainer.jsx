@@ -4,7 +4,14 @@ import Message from './Message'
 class MessagesContainer extends Component {
 
   render() {
-    let arrayOfComponents = this.props.messages.map(messageObj => <Message key={messageObj.id} message={messageObj}/> )
+    let arrayOfComponents = this.props.messages.map(messageObj => (
+      <Message
+        key={messageObj.id}
+        message={messageObj}
+        deleteMessage={this.props.deleteMessage}
+        updateMessage={this.props.updateMessage}
+      />
+    ) )
     return (
       <>
         { arrayOfComponents }
