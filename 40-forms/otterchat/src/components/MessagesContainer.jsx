@@ -4,19 +4,10 @@ import Message from './Message'
 class MessagesContainer extends Component {
 
   render() {
+    let arrayOfComponents = this.props.messages.map((messageObj, index, orig) => <Message key={messageObj.id} message={messageObj}/> )
     return (
       <>
-        <Message
-          arr={[1,2,3,4]}
-          bool={false}
-          num={123}
-          obj={{this: "Will work"}}
-          func={() => {}}
-        />
-        <Message name="John" content="I enjoy basketball"/>
-        <Message name="Mary" content="I love soccer"/>
-        <Message name="Sarah" content="Rocks rock"/>
-        <Message name="BLAHBLAHBLAH" content="HUEHUEHUE"/>
+        { arrayOfComponents }
       </>
     );
   }

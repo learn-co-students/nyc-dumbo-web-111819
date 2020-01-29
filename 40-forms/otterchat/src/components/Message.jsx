@@ -2,20 +2,13 @@ import React from 'react'
 
 class Message extends React.Component {
 
-  state = {
-    likes: 0
-  }
-
-  handleLike = (evt) => {
-    let newNumber = this.state.likes + 1
-    this.setState({
-      likes: newNumber,
-    })
+  handleLike = () => {
+    console.log("WE WILL GET BACK TO THIS LATER");
   }
 
   render(){
-    let {name, content} = this.props
-    let numberOfLikes = this.state.likes === 0 ? "No" : this.state.likes
+    let {name, content, likes} = this.props.message
+    let numberOfLikes = likes === 0 ? "No" : likes
     return(
       <div className="container">
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Sea_Otter_%28Enhydra_lutris%29_%2825169790524%29_crop.jpg" alt="otter"></img>

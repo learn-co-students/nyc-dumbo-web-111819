@@ -2,15 +2,54 @@ import React, { Component } from 'react';
 
 class Form extends Component {
 
+  state = {
+    name: "Name",
+    content: "Content"
+  }
+
+  handleAllChange = (evt) => {
+    let {value, name} = evt.target
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleSubmit = (evt) => {
+    evt.preventDefault()
+    console.log(this.props);
+    let newMessage = this.state
+    this.props.addMessage(newMessage)
+  }
+
+  // handleNameChange = (evt) => {
+  //   // console.log(evt);
+  //   let {value} = evt.target
+  //   this.setState({
+  //     name: value
+  //   })
+  // }
+
+  // handleContentChange = (evt) => {
+  //   // console.log(evt);
+  //   let {value} = evt.target
+  //   this.setState({
+  //     content: value
+  //   })
+  // }
+
+
   render() {
+    const {name, content} = this.state
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           id="name"
           type="text"
           name="name"
           autoComplete="off"
+          value={name}
+          onChange={this.handleAllChange}
         />
         <label htmlFor="content">Says:</label>
         <input
@@ -18,6 +57,8 @@ class Form extends Component {
           type="text"
           name="content"
           autoComplete="off"
+          value={content}
+          onChange={this.handleAllChange}
         />
         <input type="submit" value="Send"/>
       </form>
