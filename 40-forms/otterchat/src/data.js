@@ -27,7 +27,7 @@ const messages = [
     id: 5,
     name: "BLAHBLAHBLAH",
     content: "HUEHUEHUE",
-    likes: -23
+    likes: 0
   }
 ]
 
