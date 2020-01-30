@@ -3,14 +3,26 @@ import './App.css';
 import MessagesContainer from './components/MessagesContainer'
 import Form from './components/Form'
 import Search from './components/Search'
-import data from './data'
 
 class App extends React.Component {
 
   state = {
-    messages: data
+    messages: [],
+    search: ""
   }
 
+  componentDidMount(){
+    fetch('http://localhost:4000/messages')
+      .then(r => r.json())
+      .then(messages => {
+        this.setState({
+          messages: messages
+        })
+      })
+  }
+
+
+  // CRUD(start)
   addMessageFunction = (infoFromTheChild) => {
     let newId = this.state.messages.length + 1
     let newMessage = {...infoFromTheChild, id: newId, likes: 0 }
@@ -39,18 +51,46 @@ class App extends React.Component {
       messages: updatedArray
     })
   }
+  // CRUD(end)
+
+
+  // DYNAMIC SEARCH
+
+  updateSearchTerm = (text) => {
+    this.setState({
+      search: text
+    })
+  }
+
+  displayedMessages = () => {
+    let arrThatICareAbout = this.state.messages.filter(message => {
+      let {content, name} = message
+      let loweredSearchTerm = this.state.search.toLowerCase()
+      return content.toLowerCase().includes(loweredSearchTerm) || name.toLowerCase().includes(loweredSearchTerm)
+    })
+    return arrThatICareAbout
+  }
+
+  // DYNAMIC SEARCH
+
 
   render(){
     return (
       <div className="App">
         <h1>{this.props.title}</h1>
         <Form addMessage={this.addMessageFunction} />
-        <Search/>
+
+        <Search
+          search={this.state.search}
+          updateSearchTerm={this.updateSearchTerm}
+        />
+
         <MessagesContainer
           deleteMessage={this.deleteMessageFunction}
-          messages={this.state.messages}
+          messages={this.displayedMessages()}
           updateMessage={this.updateMessage}
         />
+      
       </div>
     );
   }
