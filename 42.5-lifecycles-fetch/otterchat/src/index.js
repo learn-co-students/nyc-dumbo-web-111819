@@ -4,6 +4,6 @@ import './index.css';
 import App from './App';
 
 ReactDOM.render(<App
-  title="Hello from the Otter Side"
+  title="I Have no Significant otter otter than Fortnite"
 />,
 document.getElementById('root'));

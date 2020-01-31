@@ -1,12 +1,6 @@
 {
   "messages": [
     {
-      "id": 1,
-      "name": "Eric",
-      "content": "I love socks",
-      "likes": -24
-    },
-    {
       "id": 2,
       "name": "Rei",
       "content": "Hashtag fortnite da best. Tomato town - Epic Gamez, Epic Lamez.",
@@ -28,7 +22,13 @@
       "id": 5,
       "name": "Rei",
       "content": "Fortnite flossing battle royale battle bus",
-      "likes": 0
+      "likes": 146
+    },
+    {
+      "name": "Rei",
+      "content": "Fortnite > React",
+      "likes": 0,
+      "id": 6
     }
   ]
 }

@@ -33,10 +33,8 @@ class App extends React.Component {
       body: JSON.stringify(newMessage)
     })
       .then(r => r.json())
-      .then(newMessageFromServer => {
-
-        let thePushedInModifiedArray = [newMessageFromServer, ...this.state.messages]
-        
+      .then(responseFromServer => {
+        let thePushedInModifiedArray = [...this.state.messages, responseFromServer]
         this.setState({
           messages: thePushedInModifiedArray
         })
@@ -48,7 +46,7 @@ class App extends React.Component {
       method: "DELETE"
     })
       .then(r => r.json())
-      .then(response => {
+      .then(responseFromServer => {
 
         let filteredArray = this.state.messages.filter(message => message.id !== id)
         this.setState({
@@ -56,12 +54,15 @@ class App extends React.Component {
         })
 
       })
+
   }
 
-  updateMessage = (idFromChild, number) => {
+  updateMessage = (idFromChild, number, oldLikes) => {
 
-    let foundMessage = this.state.messages.find(message => message.id === idFromChild)
-    let newLikes = foundMessage.likes + number
+    // let foundMessage = this.state.messages.find(message => message.id === idFromChild)
+    // let newLikes = foundMessage.likes + number
+
+    let newLikes = oldLikes + number
 
     fetch(`http://localhost:4000/messages/${idFromChild}`, {
       method: "PATCH",
@@ -72,22 +73,25 @@ class App extends React.Component {
         likes: newLikes
       })
     })
-      .then(r => r.json())
-      .then(updatedMessageFromServer => {
+    .then(r => r.json())
+    .then(updatedMessage => {
 
-        let updatedArray = this.state.messages.map(message => {
-          if (message.id === updatedMessageFromServer.id) {
-            return {...message, likes: updatedMessageFromServer.likes}
-          } else {
-            return message
-          }
-        })
 
-        this.setState({
-          messages: updatedArray
-        })
-
+      let updatedArray = this.state.messages.map(message => {
+        if (message.id === updatedMessage.id) {
+          return {...message, likes: updatedMessage.likes}
+        } else {
+          return message
+        }
       })
+
+      this.setState({
+        messages: updatedArray
+      })
+
+    })
+
+
   }
   // CRUD(end)
 

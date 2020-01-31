@@ -8,7 +8,7 @@ class Message extends React.Component {
 
   handleLike = () => {
     let number = Math.random() < 0.5 ? 50 : -2
-    this.props.updateMessage(this.props.message.id, number)
+    this.props.updateMessage(this.props.message.id, number, this.props.message.likes)
 
     // THIS DOES THE SAME THING AS OUR componentDidUpdate
     // if (number > 0) {
