@@ -10,6 +10,7 @@ export default class Sort extends Component {
         // console.log(this.props)
         return (
             <div>
+                <label> Sort by: </label>
                 <select onChange={this.handleChange}>
                     <option value="All"> All</option>
                     <option value="Name"> Name</option>

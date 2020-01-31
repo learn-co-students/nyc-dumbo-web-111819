@@ -9,10 +9,8 @@ export default class Filter extends Component {
     render() {
         return (
             <div>
-                <label>
-                <span> Greased?</span>
+                <label> Greased? </label>
                     <input type="checkbox" value="greased" onChange={this.handleChange}/>
-                </label>
             </div>
         )
     }

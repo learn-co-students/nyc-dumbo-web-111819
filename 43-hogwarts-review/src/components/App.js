@@ -7,13 +7,15 @@ import hogs from '../porkers_data';
 
 class App extends Component {
 
-  // send the callback function down to filter container & filter
-// invoke it in filter
-
   state={
     sortValue: "All",
     filterValue: false
   }
+
+// Now, let's find a way to be able to change this state two levels down:
+// 1. write a function that sets the state here
+// 2. send the callback function down to filter container & filter
+// 3. invoke it in Filter
 
   handleSort = (newSortValue) => {
     this.setState({
