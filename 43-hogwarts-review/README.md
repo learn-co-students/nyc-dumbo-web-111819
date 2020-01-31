@@ -1,3 +1,14 @@
+# Hogwarts and Thinking in React Review
+
+## Resources:
+[Thinking in React Docs](https://reactjs.org/docs/thinking-in-react.html)
+[Sort in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+[Lecture video](https://youtu.be/RLG-YYRr1GU)
+
+## Component tree and wireframe:
+![Component tree](awwboard.png)
+
+-------------------------------
 # Hogwarts: The React app for fans of prize-winning pigs
 
 ## React Week 1 Project
