@@ -31,6 +31,9 @@ class App extends Component {
     })
     }
   
+  // Okay, now that we have a working inverse data flow, let's write functiond for sorting the hogs and filtering them.
+  // Since sortHogs gives us all elements back, we will pass this function as an argument to the filter function when in the props on the line 78.
+  
   sortHogs = () => {
     let {sortValue} = this.state
 
