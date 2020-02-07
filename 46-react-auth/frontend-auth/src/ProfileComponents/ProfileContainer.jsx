@@ -13,10 +13,10 @@ class ProfileContainer extends Component {
         <h3>Snacks</h3>
 
         <ol>
-          {}
+          {snacks.map(snackObj => <Snack key={snackObj.id} snack={snackObj} />)}
         </ol>
 
-        <NewSnackForm/>
+        <NewSnackForm token={this.props.token} addOneSnack={this.props.addOneSnack}/>
 
       </div>
     );

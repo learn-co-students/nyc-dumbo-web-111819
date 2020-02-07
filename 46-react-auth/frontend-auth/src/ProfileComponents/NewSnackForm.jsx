@@ -8,7 +8,21 @@ class NewSnackForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    console.log(this.props.token);
     console.log(this.state);
+
+    fetch("http://localhost:4000/snacks", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "Authorization": `bearer ${this.props.token}`
+      },
+      body: JSON.stringify(this.state)
+    })
+    .then(r=> r.json())
+    .then((snackObj) => {
+      this.props.addOneSnack(snackObj)
+    })
   }
 
   handleChange = (e) => {
