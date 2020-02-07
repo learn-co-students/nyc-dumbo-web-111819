@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :authorized, only: [:persist]
 
-  def show
-    @user = User.find(params[:id])
-    render json: @user
-  end
+  # def show
+  #   @user = User.find(params[:id])
+  #   render json: @user
+  # end
 
   # REGISTER
   def create
@@ -34,24 +34,6 @@ class UsersController < ApplicationController
     wristband = encode_token({user_id: @user.id})
     render json: {user: UserSerializer.new(@user), token: wristband}
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   private
 
