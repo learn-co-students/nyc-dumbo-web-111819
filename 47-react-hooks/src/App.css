@@ -1,0 +1,23 @@
+body {
+  margin: auto;
+}
+
+input[type="text"] {
+  width: 95%;
+}
+
+.quote-card {
+  border: 2px solid black;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#quote-container {
+  text-align: center;
+}
+
+.App {
+  margin-top: 30px;
+  text-align: center
+}
