@@ -7,6 +7,14 @@ import ToyContainer from './Components/ToyContainer'
 
 class App extends React.Component{
 
+  componentDidMount() {
+    // fetch()
+    // .then()
+    // .then(res => {
+      // this.props.setToys(res)
+    // })
+  }
+
   render(){
     return (
       <>

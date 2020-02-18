@@ -1,19 +1,10 @@
 import React from 'react';
-import {connect} from 'react-redux'
-import {likeToy} from '../Redux/actions'
 
-const ToyCard = ( props ) => {
-
-  let {name, image, likes, id} = props.toy
+const ToyCard = ({name, likes, image, id}) => {
 
   const handleLike = () => {
-    // fetch()
-    // .then()
-    // .then(() => {
-      props.likeToy(id);
-    // })
+    console.log("Clicked", id);
   }
-
 
   return (
     <div className="card">
@@ -27,4 +18,4 @@ const ToyCard = ( props ) => {
 }
 
 
-export default connect(null, {likeToy})(ToyCard);
+export default ToyCard;
